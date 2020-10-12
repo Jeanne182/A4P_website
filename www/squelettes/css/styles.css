@@ -6574,6 +6574,10 @@ button.bg-dark:focus {
   width:10rem !important;
 }
 
+.rectangle-14{
+  width:14rem !important;
+}
+
 .rounded-pill {
   border-radius: 50rem !important;
 }
@@ -10229,6 +10233,30 @@ button.bg-dark:focus {
   .responsive .rectangle-8{
     width:unset !important;
     height:8rem !important;
+  }
+
+  .flex-row.responsive{
+    align-items:center !important;
+  }
+  
+  .bg-grey-responsive{
+    background-color: rgb(245, 244, 244) !important;
+  }
+
+  .responsive .rectangle-9{
+    border-radius:50% !important;
+    height:12rem !important;
+    width:12rem !important;
+    margin-bottom: 1rem !important;
+    margin-top: 1.5rem !important;
+  }
+
+  .responsive .rectangle-14{
+    border-radius:50% !important;
+    height:12rem !important;
+    width:12rem !important;
+    margin-bottom: 1rem !important;
+    margin-top: 1.5rem !important;
   }
 }
 

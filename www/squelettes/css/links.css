@@ -41,10 +41,10 @@ a[hreflang]:after {
   content: "\0000a0[" attr(hreflang) "]";
 }
 /* Liens externes */
-a.spip_out:after,
+/* a.spip_out:after,
 a.external:after {
   content: "\0000a0\279A";
-}
+} */
 a[hreflang].spip_out:after,
 a[hreflang].external:after {
   content: "\0000a0[" attr(hreflang) "]\0000a0\279A";
