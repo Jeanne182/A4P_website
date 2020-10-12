@@ -1,0 +1,41 @@
+<BOUCLE_rubriques(RUBRIQUES){id_rubrique}>
+    <span class="flex-column b-r-15 p-3 border-blue mb-6">
+        <div class="flex-row responsive hover-site column-centered">
+            <div class='picture image-paragraph ml-4 rounded-circle-7' style="background-image: url('[IMG/(#LOGO_RUBRIQUE|fichier)]');">
+            </div>
+            <span class="flex-column row-centered">
+                <h4 class='primary-font text-blue hover-yellow #EDIT{nom_site}'>#TITRE</h4>
+                <strong class="h7 text-yellow hover-yellow">
+                    Mots-clés : 
+                    <BOUCLE_mot(MOTS){id_rubrique}{type=Mots-clés}>
+                        #TITRE 
+                        <BOUCLE_test_last(CONDITION){si #_mot:TOTAL_BOUCLE|!=={#_mot:COMPTEUR_BOUCLE}}>
+                             - 
+                        </BOUCLE_test_last>
+                    </BOUCLE_mot>
+                </strong>
+                [<div class='l-h-12 hover-yellow #EDIT{descriptif}'>(#DESCRIPTIF)</div>]
+                <a>
+                    <h6 id="toggle-#ID_RUBRIQUE" class="btn bg-yellow btn-m text-white primary-font"><multi>[fr]En savoir +[en]Learn more</multi></h6>
+                </a>
+            </span>                    
+        </div>
+        <div class="description responsive toggle-#ID_RUBRIQUE mt-3 p-3 text-justify none">
+            #TEXTE
+            <ul>
+                <BOUCLE_sites(SITES){id_rubrique}>
+                    <div class="flex-row hover-site ml-5" target="_blank">
+
+                        <strong>- </strong>
+                        <li class="disc mt-0 flex-column row-centered">
+                            <a href="#URL_SITE" class='h6 mb-sm-0 primary-font link text-dark-blue hover-yellow #EDIT{nom_site}' target='_blank'>#NOM_SITE</a>
+                            [<div class='l-h-12 hover-yellow #EDIT{descriptif}'>(#DESCRIPTIF)</div>]        
+                            
+                        </li>
+                    </div>
+                </BOUCLE_sites>
+            </ul>
+        </div>
+    </span>
+</BOUCLE_rubriques>
+

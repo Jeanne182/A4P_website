@@ -1,0 +1,111 @@
+<BOUCLE_principale(RUBRIQUES) {id_rubrique}{!titre_mot='invisible'}>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+[(#REM) Cf.: http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+]<!--[if lt IE 7 ]> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js ie ie7"> <![endif]-->
+<!--[if IE 8 ]> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js ie ie8"> <![endif]-->
+<!--[if IE 9 ]> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js"> <!--<![endif]-->
+<head>
+	<script type='text/javascript'>/*<![CDATA[*/(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);/*]]>*/</script>
+	<title>[(#TITRE|couper{80}|textebrut) - ][(#NOM_SITE_SPIP|textebrut)]</title>
+	[<meta name="description" content="(#INTRODUCTION{150}|attribut_html)" />]
+	[<link rel="canonical" href="(#URL_ARTICLE|url_absolue)" />]
+	<INCLURE{fond=inclure/head} />
+</head>
+
+<body id="page-top">
+
+<INCLURE{fond=inclure/header-rubrique,id_rubrique} />
+
+
+	<BOUCLE_mots(MOTS){id_rubrique}{titre_mot IN 'rubrique_initiatives', 'rubrique_simple', 'rubrique_sites_pistes','rubrique_climat_ajd', 'rubrique_pour_aller_plus_loin', 'page_accueil', 'rubrique_agir_quotidien', 'rubrique_manifeste', 'rubrique_engagements_pris', 'rubrique_alumni_proches', 'rubrique_je_m_engage', 'rubrique_rechauffement_pour_les_nuls', 'rubrique_fiches_portraits', 'rubrique_soutiens'}>
+		
+		<BOUCLE_test_simple(CONDITION){si #TITRE|=={'rubrique_simple'}}>
+			<INCLURE{fond=inclure/rubriques/rubrique_simple,id_rubrique} />
+		</BOUCLE_test_simple>
+		
+		<BOUCLE_test_initiatives(CONDITION){si #TITRE|=={'rubrique_initiatives'}}>
+			<INCLURE{fond=inclure/rubriques/rubrique_initiatives,id_rubrique} />
+		</BOUCLE_test_initiatives>
+
+		<BOUCLE_test_je_m_engage(CONDITION){si #TITRE|=={'rubrique_je_m_engage'}}>
+			<INCLURE{fond=inclure/rubriques/rubrique_je_m_engage,id_rubrique} />
+		</BOUCLE_test_je_m_engage>
+		
+		<BOUCLE_test_sites_pistes(CONDITION){si #TITRE|=={'rubrique_sites_pistes'}}>
+			<INCLURE{fond=inclure/rubriques/rubrique_sites_pistes,id_rubrique} />
+		</BOUCLE_test_sites_pistes>
+
+		<BOUCLE_test_climat_ajd(CONDITION){si #TITRE|=={'rubrique_climat_ajd'}}>
+			<INCLURE{fond=inclure/rubriques/rubrique_climat_ajd,id_rubrique} />
+		</BOUCLE_test_climat_ajd>
+
+		<BOUCLE_test_rechauffement_pour_les_nuls(CONDITION){si #TITRE|=={'rubrique_rechauffement_pour_les_nuls'}}>
+			<INCLURE{fond=inclure/rubriques/rubrique_rechauffement_pour_les_nuls,id_rubrique} />
+		</BOUCLE_test_rechauffement_pour_les_nuls>
+
+		<BOUCLE_test_pour_aller_plus_loin(CONDITION){si #TITRE|=={'rubrique_pour_aller_plus_loin'}}>
+			<INCLURE{fond=inclure/rubriques/rubrique_pour_aller_plus_loin,id_rubrique, ajax, env} />
+		</BOUCLE_test_pour_aller_plus_loin>
+
+		<BOUCLE_test_jagis(CONDITION){si #TITRE|=={'page_accueil'}}>
+			<INCLURE{fond=inclure/rubriques/page_accueil,id_rubrique} />
+		</BOUCLE_test_jagis>
+
+		<BOUCLE_test_agir_quotidien(CONDITION){si #TITRE|=={'rubrique_agir_quotidien'}}>
+			<INCLURE{fond=inclure/rubriques/rubrique_agir_quotidien,id_rubrique} />
+		</BOUCLE_test_agir_quotidien>
+
+		<BOUCLE_test_manifeste(CONDITION){si #TITRE|=={'rubrique_manifeste'}}>
+			<INCLURE{fond=inclure/rubriques/rubrique_manifeste,id_rubrique} />
+		</BOUCLE_test_manifeste>
+
+		<BOUCLE_test_engagements_pris(CONDITION){si #TITRE|=={'rubrique_engagements_pris'}}>
+			<INCLURE{fond=inclure/rubriques/rubrique_engagements_pris,id_rubrique} />
+		</BOUCLE_test_engagements_pris>
+
+		<BOUCLE_test_alumni_proches(CONDITION){si #TITRE|=={'rubrique_alumni_proches'}}>
+			<INCLURE{fond=inclure/rubriques/rubrique_alumni_proches,id_rubrique} />
+		</BOUCLE_test_alumni_proches>
+
+		<BOUCLE_test_fiches_portraits(CONDITION){si #TITRE|=={'rubrique_fiches_portraits'}}>
+			<INCLURE{fond=inclure/rubriques/rubrique_fiches_portraits,id_rubrique} />
+		</BOUCLE_test_fiches_portraits>
+
+		<BOUCLE_test_soutiens(CONDITION){si #TITRE|=={'rubrique_soutiens'}}>
+			<INCLURE{fond=inclure/rubriques/rubrique_soutiens,id_rubrique} />
+		</BOUCLE_test_soutiens>
+
+	</BOUCLE_mots>
+	#SET{used, "non"}
+		<BOUCLE_parent(RUBRIQUES){id_rubrique=#ID_PARENT}>
+			<BOUCLE_grand_parent(RUBRIQUES){id_rubrique=#ID_PARENT}>
+				<BOUCLE_parent_agir(MOTS){id_rubrique=#ID_RUBRIQUE}>
+					<BOUCLE_test_parent_agir_quotidien(CONDITION){si #TITRE|=={'rubrique_agir_quotidien'}}>
+						#SET{used, "oui"}
+						<INCLURE{fond=inclure/rubriques/rubrique_enfant_agir_quotidien,id_rubrique=#_principale:ID_RUBRIQUE} />					
+					</BOUCLE_test_parent_agir_quotidien>
+				</BOUCLE_parent_agir>
+			</BOUCLE_grand_parent>
+		</BOUCLE_parent>
+		<BOUCLE_test_used(CONDITION){si #GET{used}|=={'non'}}>
+			<INCLURE{fond=inclure/rubriques/rubrique_basique,id_rubrique} />	
+		</BOUCLE_test_used>
+	<//B_mots>
+
+
+	<!-- SPIP -->
+	<INCLURE{fond=inclure/footer,self=#SELF} />
+
+	<!-- Bootstrap core JS-->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+	<!-- Third party plugin JS-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+	<!-- Core theme JS-->
+	[<script src="(#CHEMIN{js/scripts.js})"></script>]
+
+</body>
+</html>
+</BOUCLE_principale>

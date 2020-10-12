@@ -1,0 +1,61 @@
+<BOUCLE_principale(RUBRIQUES) {id_rubrique}>
+    <section class="figures-section">
+        
+        <div class="flex-row row-centered" style="width: 100%;">
+            <span class="flex-column">
+                <span class="primary-font f-1 text-justify text-black #EDIT{texte}">#TEXTE</span>
+            </span>
+        </div>            
+    </section>
+    <section class="page-section portfolio mt-5" id="portfolio">      
+        <BOUCLE_difficulte_article(RUBRIQUES){id_parent=#ID_RUBRIQUE}{par num titre}>
+            
+            <h5 class="text-center primary-font text-white bg-blue-green b-r-25 p-1 #EDIT{titre}">#TITRE</h5>           
+            <ul>
+                
+
+                <section class="mt-5 portfolio">
+                    <div class="row space-evenly">                                        
+                        
+                                                               
+                        <BOUCLE_sites_articles(SITES) {id_rubrique} {par nom_site}{syndication=non}>
+                            #SET{couleur, "bg-primary "}
+                            <BOUCLE_mots(MOTS){id_syndic}>
+                                
+                                <BOUCLE_test(CONDITION){si #TITRE|=={'Climat'}}>
+                                    #SET{couleur,"bg-secondary "}
+                                </BOUCLE_test>
+                                
+                            </BOUCLE_mots>  
+                            <a href="#URL_SITE" class="button-scale no-a-hover col-md-6 mb-5" target="_blank">
+                                <div class="b-r-15 h-100 #GET{couleur} w-100 mx-auto space-between flex-column" >
+                                        <span class="p-3 flex-row row-centered">
+                                                [(#LOGO_SITE|oui)
+                                                <div class='picture image-paragraph mr-3 rounded-circle-7' style="background-image: url('[IMG/(#LOGO_SITE|fichier)]');">
+                                                    <div class='text-center text-white rounded-circle-7'></div>
+                                                </div>
+                                            ]
+                                            <span class="flex-column row-centered">
+                                                <h5 class="text-white primary-font">#NOM_SITE</h5>
+                                                <div class="primary-font text-white">#DESCRIPTIF</div>
+                                            </span>
+                                        </span>
+                                        
+                                   
+                                        <span class="w-100 bg-grey b-r-b-15 flex-column column-centered" target="_blank">
+                                            <div class='a-hover mb-3 pointer'><strong class='primary-font'><multi>[fr]En savoir +[en]Learn more</multi></strong></div>
+                                        </span>    
+                                </div>
+                                
+                            </a>
+                                       
+                        </BOUCLE_sites_articles>
+                              
+                    </div>
+                </section>
+            </ul>       
+        </BOUCLE_difficulte_article>           
+    </section>
+
+    
+</BOUCLE_principale>

@@ -1,0 +1,45 @@
+<BOUCLE_principale(RUBRIQUES) {id_rubrique}>
+    
+    <section class="figures-section section-padding-top" id="figures">
+        
+            <div class="flex-row row-centered" style="width: 100%;">
+                <span class=flex-column>
+                    [<h4 id="paragraph" class="primary-font text-black #EDIT{texte}">(#_principale:TEXTE)</h4>]
+                </span>
+                <BOUCLE_article_head(ARTICLES){id_rubrique}{titre="10. Head"}>
+                    <div class='picture image-paragraph ml-4' style="background-image: url('[IMG/(#LOGO_ARTICLE|fichier)]');"></div>
+                </BOUCLE_article_head>
+            </div>
+            
+    </section>
+    
+    <section class="section-padding-bottom mt-5 portfolio">
+        <div class="row space-evenly">                                        
+            
+                                                   
+            <BOUCLE_sousRubriques(RUBRIQUES){id_parent}{par num titre}>   
+                <a href="#URL_RUBRIQUE" class="no-a-hover presentation-rubrique col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto flex-column column-centered space-between" > <!-- data-toggle="modal" data-target="#portfolioModal[(#ID_RUBRIQUE)]" -->
+                        <span class="w-100 flex-column column-centered">
+                            [(#LOGO_RUBRIQUE|oui)
+                                <div class='picture image-paragraph ml-4 rounded-circle-9 mt-3' style="background-image: url('[IMG/(#LOGO_RUBRIQUE|fichier)]');"></div>
+                            ]
+                            <h5 class="text-dark-blue primary-font flex-column mt-5 text-center column-centered">#TITRE</h5>
+                            <div class="primary-font text-justify mt-3">#DESCRIPTIF</div>
+                        </span>
+                        <span class="w-100 flex-column column-centered">
+                            <div class="separation-bar-menu-pannel mt-3"></div> 
+                            <div class='a-hover mb-3 pointer'><strong class='primary-font'><multi>[fr]En savoir +[en]Learn more</multi></strong></div>
+                        </span>
+                    </div>
+                </a>            
+            </BOUCLE_sousRubriques>
+                  
+        </div>
+    </section>
+
+    
+
+    
+
+</BOUCLE_principale>

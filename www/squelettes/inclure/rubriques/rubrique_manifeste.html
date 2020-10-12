@@ -1,0 +1,33 @@
+<BOUCLE_principale(RUBRIQUES) {id_rubrique}>
+	<BOUCLE_articles(ARTICLES) {id_rubrique}{par num titre}>		
+		
+		
+		
+		
+			
+				<div id='why-paragraph' class="flex-column column-centered text-white section-padding-top">
+					<h1 class="title logo-font text-primary text-center text-uppercase #EDIT{titre}">#TITRE</h1>
+					<div class="separation-bar-menu-pannel-blue mb-5"></div>
+					<h4 id="paragraph" class="text-black #EDIT{sous_titre}">#SOUS_TITRE</h4>
+					<h4 id="paragraph" class="text-black #EDIT{chapeau}">#CHAPEAU</h4>
+					<h4 id="paragraph" class="text-black primary-font #EDIT{texte}">#TEXTE</h4>
+					[(#LOGO_ARTICLE|oui)
+					<div class='picture image-paragraph m-0 bg-contain bg-no-repeat mt-4 mb-4' style="background-image: url('[IMG/(#LOGO_ARTICLE|fichier)]'); height:20rem; width:20rem;"></div>
+					]
+					<!-- style="background-image: url('[IMG/(#LOGO_ARTICLE|fichier)]'); height:50vh; width:100%;" -->
+				</div>
+				
+		
+
+		
+	</BOUCLE_articles>
+	<section class="section-padding-bottom mb-0 flex-column column-centered">
+		<BOUCLE_redirection(RUBRIQUES)>
+			<BOUCLE_mots(MOTS){id_rubrique}{titre_mot='rubrique_je_m_engage'}>
+				<a href="#URL_RUBRIQUE#formulaire" class="submit btn btn-xxl text-black-50">
+					<multi>[fr]S'engager maintenant[en]Commit now</multi>
+				</a>	
+			</BOUCLE_mots>
+		</BOUCLE_redirection>
+	</section>
+</BOUCLE_principale>

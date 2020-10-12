@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+[(#REM) Cf.: http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+]<!--[if lt IE 7 ]> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js ie ie7"> <![endif]-->
+<!--[if IE 8 ]> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js ie ie8"> <![endif]-->
+<!--[if IE 9 ]> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js"> <!--<![endif]-->
+    <head>
+        <title>[(#NOM_SITE_SPIP|textebrut)][ - (#SLOGAN_SITE_SPIP|textebrut)]</title>
+        <INCLURE{fond=inclure/head} />  
+    </head>
+    <body id="page-top">
+        
+        <INCLURE{fond=inclure/header} />
+
+        <!-- Masthead-->
+        <BOUCLE_accueil(RUBRIQUES){racine}>
+            <BOUCLE_mots_rubrique_accueil(MOTS){id_rubrique}{titre_mot='rubrique_accueil'}>
+                <BOUCLE_mots_header(RUBRIQUES){titre_mot='header'}>
+                <header class="masthead home-masthead bg-primary text-white text-center flex-column row-centered" style="background-image: url('[(#LOGO_RUBRIQUE|extraire_attribut{src})]');">
+                    <div class="container d-flex align-items-center flex-column column-centered">
+                        <!-- Masthead Avatar Image-->
+                        <span class='logo-container'>
+                            <img class="masthead-avatar" src="[(#_mots_rubrique_accueil:LOGO_RUBRIQUE|extraire_attribut{src})]" alt="" />
+                        </span>
+                        <script>
+                            var navHeight = $('#mainNav').outerHeight();
+                            $('.logo-container').css('margin-top', navHeight);;
+                        </script>
+                        <h5 class="primary-font font-weight-light mb-sm-0 mt-5 #EDIT{texte}"><strong>#TEXTE</strong></h5>
+                    </div>
+                </header>
+                </BOUCLE_mots_header>
+
+
+                <BOUCLE_compartiments(RUBRIQUES){id_parent=#ID_RUBRIQUE}{titre_mot="compartiment"}{par num titre}>
+
+                    <BOUCLE_test20(CONDITION){si #RANG|=={20}}>
+                        <section class="section-padding pt-4 pb-4 column-centered bg-secondary portfolio">
+                            <h5 class="text-uppercase mb-4 text-center text-white">#TITRE</h5>
+                            <div class="row space-around">
+                                <BOUCLE_articles20(ARTICLES){id_rubrique}>
+                                    <div class="flex-column column-centered m-3">
+                                        <span class="rounded-circle-7 mb-2">#LOGO_ARTICLE</span>
+                                        <div class="flex-column text-white">
+                                            <h3 class="mb-sm-0 text-center">
+                                                <BOUCLE_test_article_20_10(CONDITION){si #RANG|=={10}}>
+                                                    <B_compteur_signataires>
+                                                        #TOTAL_BOUCLE
+                                                    <BOUCLE_compteur_signataires(SIGNATURES){id_petition=1}>                                                    
+                                                    </BOUCLE_compteur_signataires>
+                                                    </B_compteur_signataires>
+                                                    
+                                                </BOUCLE_test_article_20_10>
+                                                <BOUCLE_test_article_20_20(CONDITION){si #RANG|=={20}}>
+                                                    <B_compteur_ecoles>
+                                                        #TOTAL_BOUCLE
+                                                    <BOUCLE_compteur_ecoles(SIGNATURES){fusion id_ecole}>                             
+                                                    </BOUCLE_compteur_ecoles>
+                                                    </B_compteur_ecoles>
+                                                    
+                                                </BOUCLE_test_article_20_20>
+                                                <BOUCLE_test_article_20_30(CONDITION){si #RANG|=={30}}>
+                                                    <B_compteur_temoignages>
+                                                        #TOTAL_BOUCLE
+                                                    <BOUCLE_compteur_temoignages(FORUMS){statut IN 'publie','spam'}>                       
+                                                    </BOUCLE_compteur_temoignages>
+                                                    </B_compteur_ecoles>
+                                                    
+                                                </BOUCLE_test_article_20_30>
+                                            </h3>
+                                            <h6 class="primary-font text-center #EDIT{texte}">#TEXTE</h6>
+                                        </div>
+                                    </div>
+                                </BOUCLE_articles20>
+                            </div>
+                        </section>
+                    </BOUCLE_test20>
+
+                    <BOUCLE_test30(CONDITION){si #RANG|=={30}}>
+                        <section class="section-padding portfolio mt-5">
+                            <h2 class="page-section-heading f-25 text-center text-uppercase text-blue">#TITRE</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line bg-secondary"></div>
+                            </div>
+                            <!-- <div class="row space-evenly">                                        
+                                <BOUCLE_article(ARTICLES){id_rubrique=#ID_RUBRIQUE}>
+                                    <BOUCLE_mot30(MOTS){id_article}>                                    
+                                        <BOUCLE_rubrique_mot30(RUBRIQUES){titre_mot=#TITRE}>   
+                                            <a href="#URL_RUBRIQUE" class="no-a-hover presentation-rubrique col-md-6 mb-5">
+                                                <div class="portfolio-item mx-auto flex-column column-centered space-between" >
+                                                    <span class="w-100 flex-column column-centered">
+                                                        [(#LOGO_ARTICLE|oui)
+                                                            <div class='picture image-paragraph ml-4 rounded-circle-9 mt-3' style="background-image: url('[IMG/(#LOGO_ARTICLE|fichier)]');"></div>
+                                                        ]
+                                                        <h5 class="text-dark-blue primary-font flex-column mt-5 column-centered">#_article:TITRE</h5>
+                                                        <div class="primary-font text-justify">#_article:TEXTE</div>
+                                                    </span>
+                                                    <span class="w-100 flex-column column-centered">
+                                                        <div class="separation-bar-menu-pannel mt-3"></div> 
+                                                        <div class='a-hover mb-3 pointer'><strong class='primary-font'><multi>[fr]En savoir +[en]Learn more</multi></strong></div>
+                                                    </span>
+                                                </div>
+                                            </a>            
+                                        </BOUCLE_rubrique_mot30>
+                                    </BOUCLE_mot30>                                   
+                                </BOUCLE_article>   
+                            </div> -->
+
+                            <ul>                                      
+                                <BOUCLE_article50_bis(ARTICLES){id_rubrique=#ID_RUBRIQUE}>
+                                    <BOUCLE_mot50_bis(MOTS){id_article}>                                    
+                                        <BOUCLE_rubrique_mot50_bis(RUBRIQUES){titre_mot=#TITRE}>
+                                            <div href="#URL_RUBRIQUE" class="flex-row responsive mt-4 hover-site" target="_blank">
+                                                <div class='picture image-paragraph rounded-circle-13' style="background-image: url('[IMG/(#LOGO_ARTICLE|fichier)]');">
+                                                    <div class='text-center text-white rounded-circle-13'></div><!-- colored-hover--> 
+                                                </div>
+                                                <span class="flex-column row-centered">
+                                                    <h5 class='primary-font text-dark-blue hover-yellow'>#_article50_bis:TITRE</h5>
+                                                    <div class='l-h-12 text-justify hover-yellow'>#_article50_bis:TEXTE</div>
+                                                    <a href="#URL_RUBRIQUE" class="mb-5" target="_blank">
+                                                        <h6 class="btn btn-pink btn-m h6 text-white primary-font"><multi>[fr]Je m'engage maintenant[en]I commit now</multi></h6>
+                                                    </a> 
+                                                </span>
+                                            </div>
+                                                 
+                                        </BOUCLE_rubrique_mot50_bis>
+                                    </BOUCLE_mot50_bis>                                   
+                                </BOUCLE_article50_bis>  
+                            </ul> 
+                        </section> 
+                    </BOUCLE_test30>
+                    
+                    <BOUCLE_test40(CONDITION){si #RANG|=={40}}>
+                        <section class="page-section section-padding pb-5 bg-primary text-white mb-sm-0" id="about">
+                            <div class="container pt-5">
+                                <h2 class="page-section-heading text-center text-uppercase text-white">#TITRE</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom divider-white">
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- <div class="row">
+                                    <BOUCLE_article40(ARTICLES){id_rubrique=#ID_RUBRIQUE}>
+                                          
+                                        <div class="col-lg-4 text-justify flex-column column-centered space-between[ (#COMPTEUR_BOUCLE|alterner{ml-auto, mr-auto})]">
+                                            #_article40:TEXTE
+                                            <BOUCLE_mot40(MOTS){id_article}>                                    
+                                                <BOUCLE_rubrique_mot40(RUBRIQUES){titre_mot=#TITRE}> 
+                                                    <a href="#URL_RUBRIQUE" class="btn btn-xl btn-outline-light mt-3 mb-5">
+                                                        <multi>[fr]En savoir +[en]Learn more</multi></strong>
+                                                    </a>
+                                                </BOUCLE_rubrique_mot40>
+                                            </BOUCLE_mot40>
+                                        </div>                                            
+                                    </BOUCLE_article40>
+                                </div> -->
+                                <div class="text-justify">
+                                    #TEXTE
+                                    <div class="flex-column column-centered row-centered">
+                                    <BOUCLE_article40_bis(ARTICLES){id_rubrique=#ID_RUBRIQUE}>
+                                          
+                                        
+                                            
+                                            <BOUCLE_mot40_bis(MOTS){id_article}>                                    
+                                                <BOUCLE_rubrique_mot40_bis(RUBRIQUES){titre_mot=#TITRE}> 
+                                                    <a href="#URL_RUBRIQUE" class="btn btn-xl mt-3 btn-outline-light f-1 p-2 pr-3 pl-3 #EDIT{titre}">
+                                                        #TITRE
+                                                    </a>
+                                                </BOUCLE_rubrique_mot40_bis>
+                                            </BOUCLE_mot40_bis>
+                                                                                    
+                                    </BOUCLE_article40_bis>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </section> 
+                    </BOUCLE_test40> 
+                    
+                    <BOUCLE_test50(CONDITION){si #RANG|=={50}}>
+                        <section class="section-padding-half pt-5 pb-5 flex-column column-centered portfolio">
+                            <h2 class="page-section-heading text-center f-25 text-uppercase text-blue">#TITRE</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line mb-3 bg-secondary"></div>
+                            </div>
+                            <!-- <ul>                                      
+                                <BOUCLE_article50(ARTICLES){id_rubrique=#ID_RUBRIQUE}>
+                                    <BOUCLE_condition40(CONDITION){si #RANG|!=={40}}>
+                                    <BOUCLE_mot50(MOTS){id_article}>                                    
+                                        <BOUCLE_rubrique_mot50(RUBRIQUES){titre_mot=#TITRE}>
+                                            <a href="#URL_RUBRIQUE" class="flex-row responsive p-3 mt-4 hover-site column-centered" target="_blank">
+                                                <div class='picture image-paragraph ml-4 rounded-circle-7' style="background-image: url('[IMG/(#LOGO_ARTICLE|fichier)]');">
+                                                    <div class='colored-hover text-center text-white rounded-circle-7'></div>
+                                                </div>
+                                                <span class="flex-column row-centered">
+                                                    <h5 class='primary-font text-dark-blue hover-yellow'>#_article50:TITRE</h5>
+                                                    <div class='l-h-12 text-justify hover-yellow'>#_article50:TEXTE</div>
+                                                </span>
+                                            </a>          
+                                        </BOUCLE_rubrique_mot50>
+                                    </BOUCLE_mot50>   
+                                    </BOUCLE_condition40>                                
+                                </BOUCLE_article50>  
+                            </ul>  -->
+                            <div class="row space-evenly">                                        
+                                <BOUCLE_article_bis(ARTICLES){id_rubrique=#ID_RUBRIQUE}>
+                                    <BOUCLE_condition_bouton(CONDITION){si #RANG|!=={40}}>
+                                        <BOUCLE_mot30_bis(MOTS){id_article}>                                    
+                                            <BOUCLE_rubrique_mot30_bis(RUBRIQUES){titre_mot=#TITRE}>   
+                                                <a href="#URL_RUBRIQUE" class="no-a-hover presentation-rubrique col-md-4 mb-5">
+                                                    <div class="portfolio-item mx-auto flex-column column-centered space-between" >
+                                                        <span class="w-100 flex-column column-centered">
+                                                            [(#LOGO_ARTICLE|oui)
+                                                                <div class='picture image-paragraph ml-4 rounded-circle-9 mt-3' style="background-image: url('[IMG/(#LOGO_ARTICLE|fichier)]');"></div>
+                                                            ]
+                                                            <h5 class="text-dark-blue text-center primary-font flex-column mt-5 column-centered">#_article_bis:TITRE</h5>
+                                                            <div class="primary-font text-justify">#_article_bis:TEXTE</div>
+                                                        </span>
+                                                        <span class="w-100 flex-column column-centered">
+                                                            <div class="separation-bar-menu-pannel"></div> 
+                                                            <div class='a-hover mb-3 pointer'><strong class='primary-font'><multi>[fr]En savoir +[en]Learn more</multi></strong></div>
+                                                        </span>
+                                                    </div>
+                                                </a>            
+                                            </BOUCLE_rubrique_mot30_bis>
+                                        </BOUCLE_mot30_bis>
+                                    </BOUCLE_condition_bouton>
+                                                                       
+                                </BOUCLE_article_bis>   
+                            </div>
+
+                            <BOUCLE_article_bis_bouton(ARTICLES){id_rubrique=#ID_RUBRIQUE}>
+                                <BOUCLE_condition_bouton_oui(CONDITION){si #RANG|=={40}}>
+                                    <BOUCLE_mot30_bis_bouton(MOTS){id_article}>                                    
+                                        <BOUCLE_rubrique_mot30_bis_bouton(RUBRIQUES){titre_mot=#TITRE}>   
+                                            <a href="#URL_RUBRIQUE" class="submit btn btn-xxl text-black-50 f-1 p-3 mt-4 mb-5">
+                                                <multi>[fr]Je témoigne de mes actions</multi>
+                                            </a>            
+                                        </BOUCLE_rubrique_mot30_bis_bouton>
+                                    </BOUCLE_mot30_bis_bouton>
+                                </BOUCLE_condition_bouton_oui>
+                                                                       
+                            </BOUCLE_article_bis_bouton>
+                                            	
+
+
+                            </div>
+                        </section> 
+                    </BOUCLE_test50>
+    
+                    <BOUCLE_test60(CONDITION){si #RANG|=={25}}>
+                        <section class="page-padding portfolio bg-grey">
+                            <div class="row flex-column column-centered">                                        
+                                <BOUCLE_article60(ARTICLES){id_rubrique=#ID_RUBRIQUE}>
+                                    <BOUCLE_test_article_10(CONDITION){si #RANG|=={10}}>
+                                    <div class="container">
+                                        <h2 class="page-section-heading f-25 text-center text-uppercase text-blue">#TITRE</h2>
+                                        <!-- Icon Divider-->
+                                        <div class="divider-custom divider-light">
+                                            <div class="divider-custom-line bg-pink"></div>
+                                        </div>                                   
+                                                                                                                 
+                                    </div>
+                                    <span class="flex-column column-centered mt-3 ml-5 mr-5">
+                                        <div class="primary-font text-center">#TEXTE</div>
+                                        <BOUCLE_mot60(MOTS){id_article}>                                    
+                                            <BOUCLE_rubrique_mot60(RUBRIQUES){titre_mot=#TITRE}>
+                                                <!-- <a href="#URL_RUBRIQUE" class="mb-5">
+                                                    <h6 class="btn btn-pink btn-m text-white mt-3 primary-font"><multi>[fr]En savoir +[en]Learn more</multi></h6>
+                                                </a> -->
+                                            </BOUCLE_rubrique_mot60>
+                                        </BOUCLE_mot60>
+                                    </span>                 
+                                    </BOUCLE_test_article_10>
+                                    <BOUCLE_test_article_20(CONDITION){si #RANG|=={20}}>
+                                    <BOUCLE_mot(MOTS){id_article}>                                    
+                                        <BOUCLE_rubrique_mot(RUBRIQUES){titre_mot=#TITRE}>
+                                            <a href="#URL_RUBRIQUE" class="submit btn btn-xxl text-black-50 f-1 p-3 mt-3 mb-5">
+                                                <multi>[fr]Je me mets en contact avec des alumni de mon entreprise, de ma ville, de mon école</multi>
+                                            </a>	
+                                        </BOUCLE_rubrique_mot>
+                                    </BOUCLE_mot> 
+                                    [(#INCLURE{fond=modeles/carte_gis,autocenterandzoom=oui, zoom=2, tooltip=oui,cluster=oui, clusterMaxZoom=4})]
+                                                   
+                                    </BOUCLE_test_article_20>  
+                                    
+                                    <BOUCLE_test_article_30(CONDITION){si #RANG|=={30}}>
+                                        <BOUCLE_mot_30(MOTS){id_article}>                                    
+                                            <BOUCLE_rubrique_mot_30(RUBRIQUES){titre_mot=#TITRE}>
+                                                <a href="#URL_RUBRIQUE" class="mt-4 h6 text-center primary-font link pointer">
+                                                    #_article60:TITRE
+                                                </a>	
+                                            </BOUCLE_rubrique_mot_30>
+                                        </BOUCLE_mot_30> 
+                                    </BOUCLE_test_article_30>
+
+                                </BOUCLE_article60> 
+                                
+
+                                 
+                            </div>
+                            
+                        </section> 
+                    </BOUCLE_test60>
+
+                </BOUCLE_compartiments>
+            </BOUCLE_mots_rubrique_accueil>
+        </BOUCLE_accueil>
+
+
+        
+
+        
+        <!-- SPIP -->
+        <INCLURE{fond=inclure/footer,self=#SELF} />
+
+        <!-- Bootstrap core JS-->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <!-- <script src="assets/mail/jqBootstrapValidation.js"></script> -->
+        <!-- <script src="assets/mail/contact_me.js"></script> -->
+        <!-- Core theme JS-->
+        [<script src="(#CHEMIN{js/scripts.js})"></script>]
+
+    </body>
+</html>

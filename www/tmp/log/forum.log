@@ -1,0 +1,32 @@
+2020-08-18 16:50:52 92.129.0.32 (pid 6993) :Pub:!INFO: update thread id_thread=1 avec array (
+  'id_objet' => '4',
+  'objet' => 'article',
+)
+2020-08-18 16:51:49 92.129.0.32 (pid 31549) :Pub:!INFO: update thread id_thread=2 avec array (
+  'id_objet' => '4',
+  'objet' => 'article',
+)
+2020-08-18 18:19:09 92.129.40.193 (pid 12101) :Pub:!INFO: update thread id_thread=3 avec array (
+  'id_objet' => '4',
+  'objet' => 'article',
+)
+2020-08-19 21:03:46 86.194.55.13 (pid 2231) :Pub:!INFO: update thread id_thread=4 avec array (
+  'id_objet' => '4',
+  'objet' => 'article',
+)
+2020-08-19 21:04:08 86.194.55.13 (pid 6994) :Pub:!INFO: update thread id_thread=5 avec array (
+  'id_objet' => '4',
+  'objet' => 'article',
+)
+2020-08-19 21:04:37 86.194.55.13 (pid 6993) :Pub:!INFO: update thread id_thread=6 avec array (
+  'id_objet' => '4',
+  'objet' => 'article',
+)
+2020-08-20 10:16:52 86.194.55.13 (pid 2231) :Pub:!INFO: update thread id_thread=7 avec array (
+  'id_objet' => '4',
+  'objet' => 'article',
+)
+2020-08-24 12:31:19 109.219.55.49 (pid 31549) :Pub:!INFO: update thread id_thread=8 avec array (
+  'id_objet' => '4',
+  'objet' => 'article',
+)

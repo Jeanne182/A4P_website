@@ -1,0 +1,67 @@
+<BOUCLE_principale(RUBRIQUES) {id_rubrique}>
+    
+    <BOUCLE_sous_rubriques(RUBRIQUES){id_parent=#ID_RUBRIQUE}>
+        <section class="section-padding-top">
+            <h2 class="text-center text-dark-blue text-uppercase #EDIT{titre}">#TITRE</h2>
+            
+                <div class="divider-custom mb-5">
+                    <div class="divider-custom-line"></div>
+                </div>  
+            <span class="flex-column column-centered">
+                
+                [<div class="text-justify #EDIT{texte} mb-3">(#TEXTE)</div>]
+                <BOUCLE_test_img(CONDITION){si #RANG|=={10}}>
+                    <span class="w-75 mt-3 mb-3">
+                        #_sous_rubriques:LOGO_RUBRIQUE
+                    </span>
+                </BOUCLE_test_img>
+
+            </span>  
+            
+                <ul>
+                    <BOUCLE_sites_articles(SITES) {id_rubrique}{syndication=non}{par nom_site}>
+                        <div class="flex-row responsive mt-4 hover-site column-centered">
+                            <div class='picture image-paragraph ml-4 rounded-circle-7' style="background-image: url('[IMG/(#LOGO_SITE|fichier)]');">
+                                <div class='text-center text-white rounded-circle-7'></div>
+                            </div>
+                            <span class="flex-column row-centered">
+                                <a href="#URL_SITE" class='h6 primary-font link hover-yellow #EDIT{nom_site}' target="_blank">#NOM_SITE</a>
+                                [<div class='l-h-12 text-justify #EDIT{descriptif}'>(#DESCRIPTIF)</div>]
+                            </span>
+                        </div>
+                    </BOUCLE_sites_articles> 
+                </ul> 
+                
+                <div class="page-section portfolio container">
+                    <div class="row">
+                        <BOUCLE_sousRubriques(RUBRIQUES){id_parent=#ID_RUBRIQUE}{par num titre}>
+                            
+                            <a href="#URL_RUBRIQUE" class="col-md-6 col-lg-4 mb-5">
+                                <div class="portfolio-item mx-auto bg-secondary" > <!-- data-toggle="modal" data-target="#portfolioModal[(#ID_RUBRIQUE)]" -->
+                                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                        <div class="portfolio-item-caption-content text-center text-white"></div>
+                                    </div>
+                                    [<img class="img-fluid small-content" src="(#LOGO_RUBRIQUE|extraire_attribut{src})" alt="" />]
+                                    <h5 class="text-white primary-font flex-column column-centered">#TITRE</h5>
+                                </div>
+                            </a>
+                            
+        
+                        </BOUCLE_sousRubriques>
+                    </div>
+                </div>    
+        </section>
+    </BOUCLE_sous_rubriques>
+ 
+
+<section class="page-padding">
+    <h5 class="primary-font text-dark-blue">Dans la même rubrique...</h5>
+    <ul>
+        <BOUCLE_sousRubrique(RUBRIQUES){meme_parent}{par num titre}{!id_rubrique}>
+            <BOUCLE_rubriques_invisibles(MOTS){id_rubrique}{titre='invisible'}> </BOUCLE_rubriques_invisibles>
+            <li><a class="link" href="#URL_RUBRIQUE">#TITRE</a></li>
+            <//B_rubriques_invisibles>
+        </BOUCLE_sousRubrique>
+    </ul>
+</section>
+</BOUCLE_principale>

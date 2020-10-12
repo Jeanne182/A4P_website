@@ -1,0 +1,50 @@
+<!-- Footer-->
+<footer class="footer bg-secondary text-center">
+	<div class="container">
+		<div class="row">
+			<!-- Footer Location-->
+			<div class="col-lg-4 mb-5 mb-lg-0">
+				<h4 class="text-uppercase mb-4"><multi>[fr]Plan du site</multi></h4>
+					<BOUCLE_rubriques(RUBRIQUES){titre_mot="rubrique_principale"}{par num titre}>
+							<BOUCLE_sous_rubriques(RUBRIQUES) {id_parent=#ID_RUBRIQUE} {par num titre}{titre_mot !='invisible'}>
+								
+							<div class="h8 m-0 text-left text-white"><a class="text-left" href="#URL_RUBRIQUE">- #TITRE</a></div>
+							
+						</BOUCLE_sous_rubriques>
+					</BOUCLE_rubriques>
+
+			</div>
+			<!-- Footer Social Icons-->
+			<div class="col-lg-4 mb-5 mb-lg-0">
+				<h4 class="text-uppercase mb-4"><multi>[fr]Sur le web[en]Around the web</multi></h4>
+				<a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+				<a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+				<a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+			</div>
+			<!-- Footer About Text-->
+			<div class="col-lg-4">
+				<h4 class="text-uppercase mb-4"><multi>[fr]Nous contacter[en]Contact us</multi></h4>
+				<p class="lead mb-0">
+					adressemail@alumnifortheplanet.org</p>
+					+336 00 00 00 00
+				</p>
+			</div>
+		</div>
+	</div>
+	
+</footer>
+<!-- Copyright Section-->
+<div class="bg-dark-blue py-4 text-center text-white">
+	
+	<p class="colophon">
+		<!-- <a rel="contents" href="#URL_PAGE{plan}" class="first"><:plan_site:></a>-->[ 
+		(#SESSION{id_auteur}|non) <a href="[(#URL_PAGE{login}|parametre_url{url,#SELF})]" rel="nofollow" class='login_modal'><:lien_connecter:></a>][
+		(#AUTORISER{ecrire})<a href="#CONST{_DIR_RESTREINT_ABS}"><:espace_prive:></a>][
+		(#SESSION{id_auteur}|oui) | <a href="#URL_LOGOUT" rel="nofollow"><:icone_deconnecter:></a>]
+	</p>
+	<div class="container"><small>Copyright © Alumni For The Planet 2020</small></div>
+</div>
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+<div class="scroll-to-top d-lg-none position-fixed">
+	<a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
+</div>

@@ -1,0 +1,141 @@
+<BOUCLE_principale(RUBRIQUES) {id_rubrique}>
+
+    
+    <section id="key-words" class="section-padding pb-4 bg-secondary row space-between">
+        
+        <BOUCLE_groupes_mots(GROUPES_MOTS){titre='Mots-clés'}>
+            <span id="key-word-selector" class="flex-column p-3">
+                <BOUCLE_mots_titre1(MOTS){id_groupe}{1,1}>
+                    #SET{descriptif,#DESCRIPTIF}
+                </BOUCLE_mots_titre1>
+                <strong class="h7 align-middle mb-2 text-center text-white text-uppercase mt-4">#GET{descriptif}</strong>             
+               
+                <BOUCLE_mots(MOTS){id_groupe}{0,2}>
+                    [(#ENV{p#ID_MOT}|oui)
+                    <a id="#TITRE" class="selector ajax ml-0 pl-0 " href="[(#SELF|parametre_url{p#ID_MOT,''})]#key-words">
+                        <label class="key-word text-white mt-1 mb-1 container-checkbox text-justify">
+                            #TITRE                                                                             
+                        <span class="checkmark bg-primary key-word-checkmark t-0"></span>
+                    ]
+
+                    [(#ENV{p#ID_MOT}|non)
+                        <a id="#TITRE" class="selector ajax ml-0 pl-0 " href="[(#SELF|parametre_url{p#ID_MOT,#TITRE})]#key-words">
+                            <label class="key-word text-white mt-1 mb-1 container-checkbox text-justify">
+                                
+                                #TITRE                                                                      
+                        <span class="checkmark key-word-checkmark key-word-checkmark-none t-0"></span>
+                    ]
+                    </label>  
+                    </a>  
+                </BOUCLE_mots>
+            </span>
+            <span id="key-word-selector" class="flex-column p-3">
+                <BOUCLE_mots_titre2(MOTS){id_groupe}{2,2}>
+                    #SET{descriptif,#DESCRIPTIF}
+                </BOUCLE_mots_titre2> 
+                <strong class="h7 align-middle mb-2 text-center text-white text-uppercase mt-4">#GET{descriptif}</strong>             
+                               
+                <BOUCLE_mots2(MOTS){id_groupe}{2,3}>
+                    [(#ENV{p#ID_MOT}|oui)
+                    <a id="#TITRE" class="selector ajax ml-0 pl-0 " href="[(#SELF|parametre_url{p#ID_MOT,''})]#key-words">
+                        <label class="key-word text-white mt-1 mb-1 container-checkbox text-justify">
+                            #TITRE                                                                             
+                        <span class="checkmark bg-primary key-word-checkmark t-0"></span>
+                    ]
+
+                    [(#ENV{p#ID_MOT}|non)
+                        <a id="#TITRE" class="selector ajax ml-0 pl-0 " href="[(#SELF|parametre_url{p#ID_MOT,#TITRE})]#key-words">
+                            <label class="key-word text-white mt-1 mb-1 container-checkbox text-justify">
+                                
+                                #TITRE                                                                      
+                        <span class="checkmark key-word-checkmark key-word-checkmark-none t-0"></span>
+                    ]
+                    </label>  
+                    </a>  
+                </BOUCLE_mots2>
+            </span>
+            <span id="key-word-selector" class="flex-column p-3">
+                <BOUCLE_mots_titre3(MOTS){id_groupe}{5,5}>
+                    #SET{descriptif,#DESCRIPTIF}
+                </BOUCLE_mots_titre3>
+                <strong class="h7 align-middle mb-2 text-center text-white text-uppercase mt-4">#GET{descriptif}</strong>             
+                                
+                <BOUCLE_mots3(MOTS){id_groupe}{5,6}>
+                    [(#ENV{p#ID_MOT}|oui)
+                    <a id="#TITRE" class="selector ajax ml-0 pl-0 " href="[(#SELF|parametre_url{p#ID_MOT,''})]#key-words">
+                        <label class="key-word text-white mt-1 mb-1 container-checkbox text-justify">
+                            #TITRE                                                                             
+                        <span class="checkmark bg-primary key-word-checkmark t-0"></span>
+                    ]
+
+                    [(#ENV{p#ID_MOT}|non)
+                        <a id="#TITRE" class="selector ajax ml-0 pl-0 " href="[(#SELF|parametre_url{p#ID_MOT,#TITRE})]#key-words">
+                            <label class="key-word text-white mt-1 mb-1 container-checkbox text-justify">
+                                
+                                #TITRE                                                                      
+                        <span class="checkmark key-word-checkmark key-word-checkmark-none t-0"></span>
+                    ]
+                    </label>  
+                    </a>  
+                </BOUCLE_mots3>
+            </span>
+        </BOUCLE_groupes_mots>
+    <script>
+        $('.selector').unbind("click").click(function(){            
+            if($(this).hasClass('selected')){
+                $(this).removeClass('selected')
+                var href = $(this).attr('href');
+                var id= $(this).attr('id');
+                split = href.split(id);
+                newHref = split[0]+split[1];
+                $(this).attr('href', newHref);
+            }
+            else{
+                console.log("not selected");
+                $(this).addClass('selected')
+            }
+        });
+    </script>     
+    </section>
+    <section id="sites-by-key-words" class="page-padding">
+        
+        <BOUCLE_rubriques(RUBRIQUES){titre_mot='rubrique_pour_aller_plus_loin'}>   
+            
+            <BOUCLE_sites(RUBRIQUES) {titre_mot IN #ENV{p43},#ENV{p44},#ENV{p45},#ENV{p46},#ENV{p47},#ENV{p48},#ENV{p49}}{id_parent}> 
+                <BOUCLE_langues(MOTS){id_rubrique}{titre IN 'fr', 'en'}>
+                    <BOUCLE_test_langue(CONDITION){si #TITRE|=={#ENV{lang}}}>
+                        
+                        <INCLURE{fond=inclure/referencement_site_modele_1,id_rubrique} />
+                    </BOUCLE_test_langue>        
+                </BOUCLE_langues>
+                    <INCLURE{fond=inclure/referencement_site_modele_1,id_rubrique} />
+                <//B_langues>
+        
+            </BOUCLE_sites>
+                
+                <BOUCLE_tous_les_sites(RUBRIQUES){id_parent}>
+        
+                    <BOUCLE_langues2(MOTS){id_rubrique}{titre IN 'fr', 'en'}>
+                        <BOUCLE_test_langue2(CONDITION){si #TITRE|=={#ENV{lang}}}>
+                            <INCLURE{fond=inclure/referencement_site_modele_1,id_rubrique} />
+                        </BOUCLE_test_langue2>        
+                    </BOUCLE_langues2>
+                        <INCLURE{fond=inclure/referencement_site_modele_1,id_rubrique} />
+                    <//B_langues2>
+                        
+                </BOUCLE_tous_les_sites> 
+                
+            <//B_sites>
+        
+        </BOUCLE_rubriques>
+    </section>
+
+    <!-- type="text/javascript" src="(#PRODUIRE{fond=mots_cles.js})" -->
+    <script>
+        $('.btn').unbind("click").click(function(){
+            var id= "." + $(this).attr('id');      
+             $(id).toggleClass('none');
+        });
+    </script> 
+</BOUCLE_principale>
+

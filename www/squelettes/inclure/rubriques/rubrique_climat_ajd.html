@@ -1,0 +1,101 @@
+<BOUCLE_principale(RUBRIQUES) {id_rubrique}>
+    
+    <BOUCLE_sous_rubriques(RUBRIQUES){id_parent=#ID_RUBRIQUE}>
+        <section class="section-padding-top">
+            
+            <h2 class="text-center text-dark-blue text-uppercase #EDIT{titre}">#TITRE</h2>
+            
+                <div class="divider-custom mb-5">
+                    <div class="divider-custom-line"></div>
+                </div>  
+            
+            <BOUCLE_test10(CONDITION){si #RANG|=={10}}>
+                <span class="flex-column">
+                    #LOGO_RUBRIQUE
+                    [<div class="mt-4 text-justify mb-3">(#TEXTE)</div>]
+                </span>
+            </BOUCLE_test10>
+
+            
+
+            <BOUCLE_test30(CONDITION){si #RANG|=={30}}>
+                <span class="flex-column column-centered responsive">
+                    [<div class="text-justify mb-5">(#TEXTE)</div>]
+                    #LOGO_RUBRIQUE
+                </span>
+            </BOUCLE_test30>
+            
+
+            <BOUCLE_test(CONDITION){si #RANG|=={20}}>
+                <span class="flex-row responsive column-centered">
+                    <span class="w-50 mr-5">#LOGO_RUBRIQUE</span>
+                    <span>
+                        <BOUCLE_objectifs(SITES) {id_rubrique}{syndication=non}{par nom_site}>
+                            <div class="flex-row mt-4 mr-3hover-site column-centered">
+                                <span class="flex-column row-centered">
+                                    <div class='h6 primary-font text-blue text-uppercase'>#NOM_SITE</div>
+                                    [<div class='l-h-12'>(#DESCRIPTIF)</div>]
+                                    <a href="#URL_SITE" class="mb-5" target="_blank">
+                                        <h6 class="btn btn-pink btn-m h6 text-white mt-3 primary-font"><multi>[fr]En savoir +[en]Learn more</multi></h6>
+                                    </a>
+                                </span>
+                            </div>
+                            </BOUCLE_objectifs>
+                    </span>
+                  
+                     
+                </span>
+                
+            </BOUCLE_test>
+            
+                
+                <ul>
+                    <div class="mt-5 row space-evenly">
+                        <BOUCLE_sites_articles(SITES) {id_rubrique}{syndication=non}>
+                            <a href="#URL_SITE" target="_blank" class="no-a-hover button-scale h-100 p-2 col-md-6 col-lg-4 mb-sm-0">
+                                <div class="bg-secondary b-r-15 presentation-rubrique p-3 h-100 portfolio-item mx-auto flex-column column-centered space-between" > <!-- data-toggle="modal" data-target="#portfolioModal[(#ID_RUBRIQUE)]" -->
+                                    <span class="w-100 text-white flex-column column-centered">
+                                        [(#LOGO_SITE|oui)
+                                            <div class='picture image-paragraph ml-4 rounded-circle-9 mt-3' style="background-image: url('[IMG/(#LOGO_SITE|fichier)]');"></div>
+                                        ]
+                                        <h5 class="text-white primary-font text-center flex-column column-centered mt-3 mb-3 #EDIT{nom_site}">#NOM_SITE</h5>
+                                        <div class="primary-font text-justify #EDIT{descriptif}">#DESCRIPTIF</div>
+                                    </span>
+                                    <span class="w-100 flex-column column-centered">
+                                        <div class='a-hover mb-3 pointer text-white'><strong class='primary-font'><multi>[fr]En savoir +[en]Learn more</multi></strong></div>
+                                    </span>
+                                </div>
+                            </a>
+                        </BOUCLE_sites_articles>
+                    </div>
+                    
+                    <BOUCLE_articles(ARTICLES) {id_rubrique}{par num titre}>
+                        <div class="flex-row responsive mt-4 hover-site column-centered" target="_blank">
+                            
+                            <div class='picture image-paragraph ml-4 rounded-circle-7' style="background-image: url('[IMG/(#LOGO_ARTICLE|fichier)]');">
+                                <div class='text-center text-white rounded-circle-7'></div>
+                            </div>
+                            <span class="flex-column row-centered">
+                                <h6 class='primary-font text-dark-blue #EDIT{titre}'>#TITRE</h6>
+                                [<div class='l-h-12 hover-yellow #EDIT{texte}'>(#TEXTE)</div>]
+                            </span>
+                        </div>
+                    </BOUCLE_articles>  
+                </ul>
+                
+            <//B_test>     
+        </section>
+    </BOUCLE_sous_rubriques>
+ 
+
+<section class="page-padding">
+    <h5 class="primary-font text-dark-blue">Dans la même rubrique...</h5>
+    <ul>
+        <BOUCLE_sousRubrique(RUBRIQUES){meme_parent}{!id_rubrique}{par num titre}>
+            <BOUCLE_rubriques_invisibles(MOTS){id_rubrique}{titre='invisible'}> </BOUCLE_rubriques_invisibles>
+            <li><a class="link" href="#URL_RUBRIQUE" target="_blank">#TITRE</a></li>
+            <//B_rubriques_invisibles>
+        </BOUCLE_sousRubrique>
+    </ul>
+</section>
+</BOUCLE_principale>

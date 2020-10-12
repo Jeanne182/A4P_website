@@ -1,0 +1,80 @@
+[(#REM) Cette balise (invisible) provoque le recalcul du forum
+la premiere fois qu'un message est poste (cf. inc/invalideur). ]
+[(#PARAMETRES_FORUM|?{''})]
+
+<section class='page-padding'>
+
+
+	<a href="#forum" name="forum" id="forum"></a>
+	[(#REM) Messages du forum ]
+	<B_comments>
+	<div class="comments-thread comments-thread-1">
+		<BOUCLE_articles(ARTICLES){id_article}>
+			<h2 class="page-section-heading text-center text-dark-blue text-uppercase">#TITRE</h2>
+			<div class="divider-custom mb-5">
+				<div class="divider-custom-line"></div>
+			</div>
+		</BOUCLE_articles>
+		
+	<ul class="comments-items">
+		#ANCRE_PAGINATION
+		<BOUCLE_comments(FORUMS?) {id_rubrique ?}{id_article ?}{id_breve ?}{id_syndic ?}{pagination #ENV{pagination, 3} } {!par date}>
+
+		<span class="mt-3  comment-fil[ (#COMPTEUR_BOUCLE|alterner{'odd','even'})][ (#COMPTEUR_BOUCLE|=={1}|oui)first][ (#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui)last][ (#EXPOSE)]">
+			<div class="comment bg-grey b-r-15 p-3 mt-4 hreview">
+				<a href="#comment#ID_FORUM" name="comment#ID_FORUM" id="comment#ID_FORUM"></a>
+				<a href="#forum#ID_FORUM" name="forum#ID_FORUM" id="forum#ID_FORUM"></a>
+				<p class="comment-meta">
+					<div rel="self bookmark" title="<:forum:forum_permalink:> #ID_FORUM" class="permalink">[(#CONFIG{forums_titre}|!={non}|oui)
+					<strong class="#EDIT{titre} text-blue comment-titre">[(#TITRE), ]</strong>]
+					<small class="text-blue"><abbr class="dtreviewed"[ title="(#DATE|date_iso)"]>[(#DATE|affdate_jourcourt)][, (#DATE|heures)][:(#DATE|minutes)]</abbr>[<span class="sep">, </span><:par_auteur:> <span class="#EDIT{qui}">(#NOM|couper{80})</span>]</small></div>
+				</p>
+				<div class="#EDIT{texte} comment-content description">
+					[(#TEXTE|lignes_longues)]
+					[<div class="comment-notes">(#NOTES|safehtml|lignes_longues)</div>]
+					[<p class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
+					<B_doc><div class="comment-doc"><BOUCLE_doc(DOCUMENTS){id_forum}>
+					[(#EXTENSION|match{'^(gif|jpg|png)$'}|?{
+						[(#MODELE{emb}|image_reduire{672,*})]
+					,
+						#LOGO_DOCUMENT{#URL_DOCUMENT}
+					})]
+					</BOUCLE_doc></div></B_doc>
+				</div>
+			</div>
+			<B_comments-fils>
+			<ul class="comments-items">
+				<BOUCLE_comments-fils(FORUMS){id_thread}{id_forum!=#_comments:ID_FORUM}{par date}>
+				<li class="comment-item bg-grey b-r-25comment-fil[ (#COMPTEUR_BOUCLE|=={1}|oui)first][ (#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui)last]">
+					<div class="comment hreview">
+						<a href="#comment#ID_FORUM" name="comment#ID_FORUM" id="comment#ID_FORUM"></a>
+						<a href="#forum#ID_FORUM" name="forum#ID_FORUM" id="forum#ID_FORUM"></a>
+						<p class="comment-meta">
+							<a rel="self bookmark" href="#forum#ID_FORUM" title="<:forum:forum_permalink:> #ID_FORUM" class="permalink">[(#CONFIG{forums_titre}|!={non}|oui)<span class="permalink">#COMPTEUR_BOUCLE.</span>
+							<strong class="#EDIT{titre} comment-titre">[(#TITRE), ]</strong>]
+							<small><abbr class="dtreviewed"[ title="(#DATE|date_iso)"]>[(#DATE|affdate_jourcourt)][, (#DATE|heures)][:(#DATE|minutes)]</abbr>[<span class="sep">, </span><:par_auteur:> <span class="#EDIT{qui}">(#NOM|couper{80})</span>]</small></a>
+						</p>
+						<div class="#EDIT{texte} comment-content description">
+							[(#TEXTE|lignes_longues)]
+							[<div class="comment-notes">(#NOTES|safehtml|lignes_longues)</div>]
+							[<p class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
+							<B_doc2><div class="comment-doc"><BOUCLE_doc2(DOCUMENTS){id_forum}>
+							[(#EXTENSION|match{'^(gif|jpg|png)$'}|?{
+								[(#MODELE{emb}|image_reduire{672,*})]
+							,
+								#LOGO_DOCUMENT{#URL_DOCUMENT}
+							})]
+							</BOUCLE_doc2></div></B_doc2>
+						</div>
+					</div>
+				</li>
+				</BOUCLE_comments-fils>
+			</ul>
+			</B_comments-fils>
+		</span>
+		</BOUCLE_comments>
+		<p class="pagination mt-3 flex-row row-centered">#PAGINATION{page_precedent_suivant, label_precedent=&lt;, label_suivant=&gt;}</p>
+	</ul>
+	</div>
+	</B_comments>
+</section>

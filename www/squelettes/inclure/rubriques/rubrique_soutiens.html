@@ -1,0 +1,50 @@
+<BOUCLE_principale(RUBRIQUES) {id_rubrique}>
+    <h1 class="text-center mt-6 text-dark-blue text-uppercase"><i>En construction</i></h1>
+    <BOUCLE_sous_rubriques(RUBRIQUES){id_parent=#ID_RUBRIQUE}{par num titre}>
+        <section class="section-padding-top">
+            <h2 class="text-center text-dark-blue text-uppercase #EDIT{titre}">#TITRE</h2>
+			<div class="divider-custom">
+				<div class="divider-custom-line"></div>
+			</div>  
+            [<div class="text-justify bg-secondary text-white p-4 b-r-15 #EDIT{texte} mb-3">(#TEXTE)</div>]
+                <BOUCLE_test_parrains(CONDITION){si #RANG|=={10}}>
+                    <ul>
+                         
+                        <BOUCLE_articles(ARTICLES) {id_rubrique}{par num titre}>
+                            <div class="flex-row mt-4 p-3 hover-site" target="_blank">
+                                <div class='picture image-paragraph mr-0 rounded-circle-14' style="background-image: url('[IMG/(#LOGO_ARTICLE|fichier)]');">
+                                    <div class='text-center text-white rounded-circle-14'></div>
+                                </div>
+                                <span class="flex-column ml-3 p-3 row-centered">
+                                    <h5 class='primary-font text-blue #EDIT{titre}'>#TITRE</h5>
+                                    <h6 class='primary-font text-green mb-sm-0 #EDIT{soustitre}'>#SOUSTITRE</h6>
+                                    [<div class='l-h-12 text-justify hover-yellow #EDIT{descriptif}'>(#TEXTE)</div>]
+                                </span>
+                            </div>
+                        </BOUCLE_articles>  
+                    </ul>
+                </BOUCLE_test_parrains>
+                <BOUCLE_test_soutiens(CONDITION){si #RANG|=={20}}>
+                    <ul>
+                        <BOUCLE_articles_soutiens(ARTICLES) {id_rubrique}{par num titre}>
+                            <div class="flex-row mt-4 p-3 b-r-15 hover-site" target="_blank">
+                                <div class='picture image-paragraph b-r-l-15 mr-0 rectangle-8' style="background-image: url('[IMG/(#LOGO_ARTICLE|fichier)]');">
+                                    <div class='text-center text-white rectangle-10'></div>
+                                </div>
+                                <span class="flex-column p-3 b-r-r-15 bg-grey row-centered">
+                                    <h6 class='primary-font text-dark-blue #EDIT{nom_site}'>#TITRE</h6>
+                                    <h6 class='primary-font text-green mb-sm-0 #EDIT{soustitre}'>#SOUSTITRE</h6>
+                                    [<div class='l-h-12 hover-yellow text-justify #EDIT{descriptif}'>(#TEXTE)</div>]
+                                </span>
+                            </div>
+                        </BOUCLE_articles_soutiens>  
+                    </ul>
+
+                    
+                </BOUCLE_test_soutiens>
+                       
+                 
+        </section>
+    </BOUCLE_sous_rubriques>
+
+</BOUCLE_principale>

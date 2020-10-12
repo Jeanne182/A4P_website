@@ -1,0 +1,123 @@
+    <section class="page-section figures-section section-padding" id="figures">
+        <h2 class="text-center text-dark-blue text-uppercase mb-0">Liste des signataires</h2>
+			<div class="divider-custom mt-2">
+				<div class="divider-custom-line"></div>
+			</div>               
+        <span class="primary-font text-center">
+            <BOUCLE_compteur_total_signatures(SIGNATURES)>
+                Au total, <strong>#TOTAL_BOUCLE alumni</strong> se sont engagés. 
+                <BOUCLE_compteur_signatures(SIGNATURES) {autorisation_infos_publiques='oui'}{id_article}>
+                    <strong>#TOTAL_BOUCLE d'entre eux</strong> ont rendu leurs informations publiques pour pouvoir être contactés et agir avec vous.
+                </BOUCLE_compteur_signatures>
+            </BOUCLE_compteur_total_signatures>
+        </span>
+    </section>
+
+    <B_signatures>  
+    <div id="signatures" class="section-padding-bottom">
+        
+        #ANCRE_PAGINATION
+        <h2 class="offscreen"><:signatures_petition:></h2>
+        <table summary="<:signatures_petition:>" class="spip mt-5 page-section">
+            <thead class="bg-secondary text-white">
+                <th class="signature-date"><a class="ajax" href='[(#SELF|parametre_url{tri,''}|parametre_url{tri_inverse,date_time})]#signatures' title="<multi>[fr]Trier par date[en]Sort by date</multi>"><:date:></a></th>
+                <th class="signature-nom"><a class="ajax" href='[(#SELF|parametre_url{tri,nom_email}|parametre_url{tri_inverse,''})]#signatures' title="<:lien_trier_nom:>"><:nom:></a></th>
+                <th class="signature-prenom"><a class="ajax" href='[(#SELF|parametre_url{tri,prenom_email}|parametre_url{tri_inverse,''})]#signatures' title="<multi>[fr]Trier par prénom[en]Sort by firstname</multi>"><multi>[fr]Prénom[en]Firstname</multi></a></th>
+                <th class="signature-ecole"><a class="ajax" href='[(#SELF|parametre_url{tri,nom_ecole}|parametre_url{tri_inverse,''})]#signatures' title="<multi>[fr]Trier par école[en]Sort by school</multi>"><multi>[fr]Ecole[en]School</multi></a></th>
+                <th class="signature-ville"><a class="ajax" href='[(#SELF|parametre_url{tri,ville}|parametre_url{tri_inverse,''})]#signatures' title="<multi>[fr]Trier par ville[en]Sort by city</multi>"><multi>[fr]Ville[en]City</multi></a></th>
+                <th class="signature-pays"><a class="ajax" href='[(#SELF|parametre_url{tri,pays}|parametre_url{tri_inverse,''})]#signatures' title="<multi>[fr]Trier par pays[en]Sort by country</multi>"><multi>[fr]Pays[en]Country</multi></a></th>
+                <th class="signature-entreprise"><a class="ajax" href='[(#SELF|parametre_url{tri,organisation}|parametre_url{tri_inverse,''})]#signatures' title="<multi>[fr]Trier par entreprise[en]Sort by company</multi>"><multi>[fr]Entreprise[en]Company</multi></a></th>
+                <th class="signature-linkedin">LinkedIn</th>
+
+                [(#REM) Afficher la colonne des messages si autorises ]
+                <BOUCLE_signature-message-th(PETITIONS){id_article=#ENV{id_article}}{message=oui}>
+                <th class="signature-message"><:message:></th>
+                </BOUCLE_signature-message-th>
+            </thead>
+             
+            <BOUCLE_signatures(SIGNATURES ecoles_alumni gis) {autorisation_infos_publiques='oui'}{id_article} {pagination #ENV{pagination, 10} } {recherche ?#ENV{recherche_signatures}} {par #ENV{tri}}{!par #ENV{tri_inverse}} {!par #ENV{tri,#ENV{tri_inverse}}|?{'',date_time}}>
+            <BOUCLE_test_tri_organisation(CONDITION){si #ENV{tri}|=={'organisation'}}>[(#ORGANISATION|non) ]</BOUCLE_test_tri_organisation>
+                <BOUCLE_test_tri_ville(CONDITION){si #ENV{tri}|=={'ville'}}><BOUCLE_test_ville(CONDITION){si #ID_GIS|=={0}}> </BOUCLE_test_ville></BOUCLE_test_tri_ville>
+                    <BOUCLE_test_tri_pays(CONDITION){si #ENV{tri}|=={'pays'}}><BOUCLE_test_pays(CONDITION){si #ID_GIS|=={0}}> </BOUCLE_test_pays></BOUCLE_test_tri_pays>
+                        
+                    <tr class="odd" id='id_signature#ID_SIGNATURE'>
+                        <td class="signature-date"><small>[(#DATE|affdate_jourcourt)]</small></td>
+                        <td class="signature-nom"><small>#_signatures:NOM_EMAIL</small></td>
+                        <td class="signature-prenom"><small>#PRENOM_EMAIL</small></td>
+                        <td class="signature-ecole">
+                            <small>
+                                
+                                #NOM_ECOLE  
+                                
+                            </small>
+                        </td>
+
+                        <BOUCLE_test(CONDITION){si #ID_GIS|!=={0}}>
+                            [(#VILLE|oui)
+                                <td class="signature-ville"><small>#VILLE</small></td>
+                            ]                              
+                            [(#PAYS|oui)
+                                <td class="signature-pays"><small>#PAYS</small></td>
+                            ]                                
+                            [(#VILLE|non)
+                            <td class="signature-ville"><small> </small></td>
+                            ]                                    
+                            [(#PAYS|non)
+                                <td class="signature-pays"><small> </small></td>
+                            ]
+                        </BOUCLE_test>
+                            <td class="signature-ville"><small> </small></td>
+                            <td class="signature-pays"><small> </small></td>                                
+                        <//B_test>
+                        
+                        
+                        
+                       
+                        [(#ORGANISATION|oui)
+                            <td class="signature-organisation"><small>#ORGANISATION</small></td>
+                        ]
+                        [(#ORGANISATION|non)
+                            <td class="signature-organisation"><small> </small></td>
+                        ]
+                        [(#LINKEDIN|oui)
+                            <td class="signature-linkedin"><small><a href="#LINKEDIN" class="link" target='_blank'>Voir le profil</a></small></td>
+                        ]
+                        [(#LINKEDIN|non)
+                            <td class="signature-linkedin"><small> </small></td>
+                        ]
+                        
+                        
+
+        </tr>
+                    
+                    
+                        <//B_test_tri_pays>
+                <//B_test_tri_ville>
+            <//B_test_tri_organisation>
+            
+            
+            </BOUCLE_signatures>
+            
+            
+        </table>
+        [<p class="pagination">(#PAGINATION{page_precedent_suivant, label_precedent=&lt;, label_suivant=&gt;})</p>]
+            [(#REM) Afficher un moteur de recherche si plus de 50 signatures
+            ou s'il etait deja present au coup d'avant]
+            [(#ENV{recherche_signatures}|?{31,#_signatures:GRAND_TOTAL}|>{10000}|oui)
+                <form method='get' action='#ENV{action}#signatures'>
+                [(#SELF|form_hidden)]
+                <div class="formulaire_spip formulaire_recherche" id="formulaire_recherche_signatures">
+                    <strong><label class="text-dark-blue mt-5" for="recherche_signatures"><:petitions:signatures_recherche_label:></label></strong>
+                    <input type="text" class="text" size="10" name="recherche_signatures" id="recherche_signatures" value=""/> 
+                    <input type="submit" class="mb-0 btn btn-pink btn-m text-white mt-3 primary-font" value="<:info_rechercher:>" />
+
+                </div>
+                </form>
+            ]
+    </div>
+    
+    </B_signatures>
+    
+    <p class="reponse_formulaire reponse_formulaire_ok success">Aucune signature ne correspond à votre recherche</p>
+    
+    <//B_signatures>

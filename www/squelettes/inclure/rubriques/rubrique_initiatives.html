@@ -1,0 +1,15 @@
+<BOUCLE_principale(RUBRIQUES) {id_rubrique}>
+    
+    
+        <BOUCLE_forum(ARTICLES){id_rubrique}>
+            <INCLURE{fond=inclure/forum,id_article, ajax} />
+            <h4 class="text-center mb-sm-0 pt-5 pb-5 section-padding bg-primary text-white text-uppercase">
+                #SOUSTITRE
+            </h4>
+                <section class="section-padding-bottom pt-4 bg-grey">
+                    
+                    #FORMULAIRE_FORUM
+                </section>
+        </BOUCLE_forum>
+ 
+</BOUCLE_principale>

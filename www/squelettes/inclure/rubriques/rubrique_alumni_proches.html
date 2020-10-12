@@ -1,0 +1,29 @@
+<BOUCLE_principale(RUBRIQUES) {id_rubrique}>
+  <h1 class="text-center mt-6 text-dark-blue text-uppercase"><i>En construction</i></h1>
+  <section class="page-section figures-section section-padding-top" id="figures">    
+    <h2 class="text-center text-dark-blue text-uppercase mb-0">Carte des signataires</h2>
+    <div class="divider-custom mt-2">
+      <div class="divider-custom-line"></div>
+    </div>           
+    <span class="primary-font text-center">
+            Sur cette carte sont visibles les <strong>lieux de résidence</strong> des différents signataires. 
+            Passez la souris sur les différents points pour connaître leur position.          
+    </span>
+  </section>
+  <section class="flex-column column-centered page-padding">
+    [(#INCLURE{fond=modeles/carte_gis,autocenterandzoom=oui, tooltip=oui,cluster=oui, clusterMaxZoom=4})]
+    <a class="submit btn btn-xxl text-black-50 f-1 p-3 mt-5 mb-3">
+      <multi>[fr]Je me mets en relation avec des alumni de mon entreprise, de ma ville, de mon école</multi>
+  </a> 
+  </section>
+<section class="section-padding-bottom flex-column column-centered">
+  <h1 class="text-primary title text-uppercase"><multi>[fr]Envie de nous rejoindre ?[en]You want to join us?</multi></h1>
+  <BOUCLE_redirection(RUBRIQUES)>
+    <BOUCLE_mots(MOTS){id_rubrique}{titre_mot='rubrique_je_m_engage'}>
+      <a href="#URL_RUBRIQUE#formulaire" class="submit btn btn-xxl text-black-50">
+        <multi>[fr]S'engager maintenant[en]Commit now</multi>
+      </a>	
+    </BOUCLE_mots>
+  </BOUCLE_redirection>
+</section>
+</BOUCLE_principale>

@@ -1,0 +1,225 @@
+2020-07-06 17:03:59 176.143.250.163 (pid 32515) :Pri:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.ecole_alumni' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signaturehtml_02fab11fe27a43fb45bba243f559c91c(),html_02fab11fe27a43fb45bba243f559c91c(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),BOUCLE_signatureshtml_389c1d11fbce52d0dd7326671fd0aed9(),html_389c1d11fbce52d0dd7326671fd0aed9(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),include()]
+SELECT signatures.ecole_alumni, signatures.id_petition, signatures.statut, signatures.id_signature, signatures.prenom_email, signatures.nom_email, signatures.url_site, signatures.nom_site, signatures.date_time AS date, signatures.annee_naissance, signatures.ad_email, signatures.message
+FROM `c1planetalumni`.spip_signatures AS `signatures`
+WHERE (signatures.id_signature = 6)
+2020-07-06 17:03:59 176.143.250.163 (pid 32515) :Pri:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.ecole_alumni' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signaturehtml_02fab11fe27a43fb45bba243f559c91c(),html_02fab11fe27a43fb45bba243f559c91c(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),BOUCLE_signatureshtml_389c1d11fbce52d0dd7326671fd0aed9(),html_389c1d11fbce52d0dd7326671fd0aed9(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),include()]
+SELECT signatures.ecole_alumni, signatures.id_petition, signatures.statut, signatures.id_signature, signatures.prenom_email, signatures.nom_email, signatures.url_site, signatures.nom_site, signatures.date_time AS date, signatures.annee_naissance, signatures.ad_email, signatures.message
+FROM `c1planetalumni`.spip_signatures AS `signatures`
+WHERE (signatures.id_signature = 4)
+2020-07-06 17:03:59 176.143.250.163 (pid 32515) :Pri:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.ecole_alumni' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signaturehtml_02fab11fe27a43fb45bba243f559c91c(),html_02fab11fe27a43fb45bba243f559c91c(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),BOUCLE_signatureshtml_389c1d11fbce52d0dd7326671fd0aed9(),html_389c1d11fbce52d0dd7326671fd0aed9(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),include()]
+SELECT signatures.ecole_alumni, signatures.id_petition, signatures.statut, signatures.id_signature, signatures.prenom_email, signatures.nom_email, signatures.url_site, signatures.nom_site, signatures.date_time AS date, signatures.annee_naissance, signatures.ad_email, signatures.message
+FROM `c1planetalumni`.spip_signatures AS `signatures`
+WHERE (signatures.id_signature = 3)
+2020-07-06 17:03:59 176.143.250.163 (pid 32515) :Pri:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.ecole_alumni' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signaturehtml_02fab11fe27a43fb45bba243f559c91c(),html_02fab11fe27a43fb45bba243f559c91c(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),BOUCLE_signatureshtml_389c1d11fbce52d0dd7326671fd0aed9(),html_389c1d11fbce52d0dd7326671fd0aed9(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),include()]
+SELECT signatures.ecole_alumni, signatures.id_petition, signatures.statut, signatures.id_signature, signatures.prenom_email, signatures.nom_email, signatures.url_site, signatures.nom_site, signatures.date_time AS date, signatures.annee_naissance, signatures.ad_email, signatures.message
+FROM `c1planetalumni`.spip_signatures AS `signatures`
+WHERE (signatures.id_signature = 2)
+2020-07-06 17:03:59 176.143.250.163 (pid 32515) :Pri:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.ecole_alumni' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signaturehtml_02fab11fe27a43fb45bba243f559c91c(),html_02fab11fe27a43fb45bba243f559c91c(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),BOUCLE_signatureshtml_389c1d11fbce52d0dd7326671fd0aed9(),html_389c1d11fbce52d0dd7326671fd0aed9(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),include()]
+SELECT signatures.ecole_alumni, signatures.id_petition, signatures.statut, signatures.id_signature, signatures.prenom_email, signatures.nom_email, signatures.url_site, signatures.nom_site, signatures.date_time AS date, signatures.annee_naissance, signatures.ad_email, signatures.message
+FROM `c1planetalumni`.spip_signatures AS `signatures`
+WHERE (signatures.id_signature = 1)
+2020-07-10 10:18:35 131.176.243.10 (pid 32516) :Pri:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.organisation' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signaturehtml_02fab11fe27a43fb45bba243f559c91c(),html_02fab11fe27a43fb45bba243f559c91c(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),BOUCLE_signatureshtml_389c1d11fbce52d0dd7326671fd0aed9(),html_389c1d11fbce52d0dd7326671fd0aed9(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),include()]
+SELECT signatures.ecole_alumni, signatures.id_petition, signatures.statut, signatures.id_signature, signatures.prenom_email, signatures.nom_email, signatures.url_site, signatures.nom_site, signatures.date_time AS date, signatures.annee_naissance, signatures.ad_email, signatures.organisation, signatures.fonction_organisation, signatures.pays_organisation, signatures.ville_organisation, signatures.message
+FROM `c1planetalumni`.spip_signatures AS `signatures`
+WHERE (signatures.id_signature = 7)
+2020-07-10 10:18:35 131.176.243.10 (pid 32516) :Pri:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.organisation' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signaturehtml_02fab11fe27a43fb45bba243f559c91c(),html_02fab11fe27a43fb45bba243f559c91c(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),BOUCLE_signatureshtml_389c1d11fbce52d0dd7326671fd0aed9(),html_389c1d11fbce52d0dd7326671fd0aed9(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),include()]
+SELECT signatures.ecole_alumni, signatures.id_petition, signatures.statut, signatures.id_signature, signatures.prenom_email, signatures.nom_email, signatures.url_site, signatures.nom_site, signatures.date_time AS date, signatures.annee_naissance, signatures.ad_email, signatures.organisation, signatures.fonction_organisation, signatures.pays_organisation, signatures.ville_organisation, signatures.message
+FROM `c1planetalumni`.spip_signatures AS `signatures`
+WHERE (signatures.id_signature = 6)
+2020-07-10 10:18:35 131.176.243.10 (pid 32516) :Pri:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.organisation' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signaturehtml_02fab11fe27a43fb45bba243f559c91c(),html_02fab11fe27a43fb45bba243f559c91c(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),BOUCLE_signatureshtml_389c1d11fbce52d0dd7326671fd0aed9(),html_389c1d11fbce52d0dd7326671fd0aed9(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),include()]
+SELECT signatures.ecole_alumni, signatures.id_petition, signatures.statut, signatures.id_signature, signatures.prenom_email, signatures.nom_email, signatures.url_site, signatures.nom_site, signatures.date_time AS date, signatures.annee_naissance, signatures.ad_email, signatures.organisation, signatures.fonction_organisation, signatures.pays_organisation, signatures.ville_organisation, signatures.message
+FROM `c1planetalumni`.spip_signatures AS `signatures`
+WHERE (signatures.id_signature = 4)
+2020-07-10 10:18:35 131.176.243.10 (pid 32516) :Pri:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.organisation' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signaturehtml_02fab11fe27a43fb45bba243f559c91c(),html_02fab11fe27a43fb45bba243f559c91c(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),BOUCLE_signatureshtml_389c1d11fbce52d0dd7326671fd0aed9(),html_389c1d11fbce52d0dd7326671fd0aed9(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),include()]
+SELECT signatures.ecole_alumni, signatures.id_petition, signatures.statut, signatures.id_signature, signatures.prenom_email, signatures.nom_email, signatures.url_site, signatures.nom_site, signatures.date_time AS date, signatures.annee_naissance, signatures.ad_email, signatures.organisation, signatures.fonction_organisation, signatures.pays_organisation, signatures.ville_organisation, signatures.message
+FROM `c1planetalumni`.spip_signatures AS `signatures`
+WHERE (signatures.id_signature = 3)
+2020-07-10 10:18:35 131.176.243.10 (pid 32516) :Pri:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.organisation' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signaturehtml_02fab11fe27a43fb45bba243f559c91c(),html_02fab11fe27a43fb45bba243f559c91c(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),BOUCLE_signatureshtml_389c1d11fbce52d0dd7326671fd0aed9(),html_389c1d11fbce52d0dd7326671fd0aed9(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),include()]
+SELECT signatures.ecole_alumni, signatures.id_petition, signatures.statut, signatures.id_signature, signatures.prenom_email, signatures.nom_email, signatures.url_site, signatures.nom_site, signatures.date_time AS date, signatures.annee_naissance, signatures.ad_email, signatures.organisation, signatures.fonction_organisation, signatures.pays_organisation, signatures.ville_organisation, signatures.message
+FROM `c1planetalumni`.spip_signatures AS `signatures`
+WHERE (signatures.id_signature = 2)
+2020-07-10 10:18:35 131.176.243.10 (pid 32516) :Pri:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.organisation' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signaturehtml_02fab11fe27a43fb45bba243f559c91c(),html_02fab11fe27a43fb45bba243f559c91c(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),BOUCLE_signatureshtml_389c1d11fbce52d0dd7326671fd0aed9(),html_389c1d11fbce52d0dd7326671fd0aed9(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),include()]
+SELECT signatures.ecole_alumni, signatures.id_petition, signatures.statut, signatures.id_signature, signatures.prenom_email, signatures.nom_email, signatures.url_site, signatures.nom_site, signatures.date_time AS date, signatures.annee_naissance, signatures.ad_email, signatures.organisation, signatures.fonction_organisation, signatures.pays_organisation, signatures.ville_organisation, signatures.message
+FROM `c1planetalumni`.spip_signatures AS `signatures`
+WHERE (signatures.id_signature = 1)
+2020-07-10 10:19:05 131.176.243.10 (pid 32515) :Pri:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.organisation' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signaturehtml_02fab11fe27a43fb45bba243f559c91c(),html_02fab11fe27a43fb45bba243f559c91c(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),BOUCLE_signatureshtml_389c1d11fbce52d0dd7326671fd0aed9(),html_389c1d11fbce52d0dd7326671fd0aed9(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),traiter_appels_inclusions_ajax()]
+SELECT signatures.ecole_alumni, signatures.id_petition, signatures.statut, signatures.id_signature, signatures.prenom_email, signatures.nom_email, signatures.url_site, signatures.nom_site, signatures.date_time AS date, signatures.annee_naissance, signatures.ad_email, signatures.organisation, signatures.fonction_organisation, signatures.pays_organisation, signatures.ville_organisation, signatures.message
+FROM `c1planetalumni`.spip_signatures AS `signatures`
+WHERE (signatures.id_signature = 7)
+2020-07-10 10:19:05 131.176.243.10 (pid 32515) :Pri:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.organisation' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signaturehtml_02fab11fe27a43fb45bba243f559c91c(),html_02fab11fe27a43fb45bba243f559c91c(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),BOUCLE_signatureshtml_389c1d11fbce52d0dd7326671fd0aed9(),html_389c1d11fbce52d0dd7326671fd0aed9(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),traiter_appels_inclusions_ajax()]
+SELECT signatures.ecole_alumni, signatures.id_petition, signatures.statut, signatures.id_signature, signatures.prenom_email, signatures.nom_email, signatures.url_site, signatures.nom_site, signatures.date_time AS date, signatures.annee_naissance, signatures.ad_email, signatures.organisation, signatures.fonction_organisation, signatures.pays_organisation, signatures.ville_organisation, signatures.message
+FROM `c1planetalumni`.spip_signatures AS `signatures`
+WHERE (signatures.id_signature = 4)
+2020-07-10 10:19:05 131.176.243.10 (pid 32515) :Pri:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.organisation' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signaturehtml_02fab11fe27a43fb45bba243f559c91c(),html_02fab11fe27a43fb45bba243f559c91c(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),BOUCLE_signatureshtml_389c1d11fbce52d0dd7326671fd0aed9(),html_389c1d11fbce52d0dd7326671fd0aed9(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),traiter_appels_inclusions_ajax()]
+SELECT signatures.ecole_alumni, signatures.id_petition, signatures.statut, signatures.id_signature, signatures.prenom_email, signatures.nom_email, signatures.url_site, signatures.nom_site, signatures.date_time AS date, signatures.annee_naissance, signatures.ad_email, signatures.organisation, signatures.fonction_organisation, signatures.pays_organisation, signatures.ville_organisation, signatures.message
+FROM `c1planetalumni`.spip_signatures AS `signatures`
+WHERE (signatures.id_signature = 3)
+2020-07-10 10:19:05 131.176.243.10 (pid 32515) :Pri:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.organisation' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signaturehtml_02fab11fe27a43fb45bba243f559c91c(),html_02fab11fe27a43fb45bba243f559c91c(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),BOUCLE_signatureshtml_389c1d11fbce52d0dd7326671fd0aed9(),html_389c1d11fbce52d0dd7326671fd0aed9(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),traiter_appels_inclusions_ajax()]
+SELECT signatures.ecole_alumni, signatures.id_petition, signatures.statut, signatures.id_signature, signatures.prenom_email, signatures.nom_email, signatures.url_site, signatures.nom_site, signatures.date_time AS date, signatures.annee_naissance, signatures.ad_email, signatures.organisation, signatures.fonction_organisation, signatures.pays_organisation, signatures.ville_organisation, signatures.message
+FROM `c1planetalumni`.spip_signatures AS `signatures`
+WHERE (signatures.id_signature = 2)
+2020-07-10 10:19:05 131.176.243.10 (pid 32515) :Pri:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.organisation' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signaturehtml_02fab11fe27a43fb45bba243f559c91c(),html_02fab11fe27a43fb45bba243f559c91c(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),BOUCLE_signatureshtml_389c1d11fbce52d0dd7326671fd0aed9(),html_389c1d11fbce52d0dd7326671fd0aed9(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),traiter_appels_inclusions_ajax()]
+SELECT signatures.ecole_alumni, signatures.id_petition, signatures.statut, signatures.id_signature, signatures.prenom_email, signatures.nom_email, signatures.url_site, signatures.nom_site, signatures.date_time AS date, signatures.annee_naissance, signatures.ad_email, signatures.organisation, signatures.fonction_organisation, signatures.pays_organisation, signatures.ville_organisation, signatures.message
+FROM `c1planetalumni`.spip_signatures AS `signatures`
+WHERE (signatures.id_signature = 1)
+2020-07-10 13:10:11 92.184.112.207 (pid 29877) :Pri:ERREUR: Erreur 1072 de mysql: Key column 'id_ecole' doesn't exist in table
+in /var/www/clients/client1/web53/web/www/ecrire/base/create.php L73 [sql_create(),creer_ou_upgrader_table(),alterer_base(),creer_base(),couteau_suisse_upgrade(),spip_plugin_install(),plugins_installer_dist(),installer_plugin(),do_install(),do_action(),one_action(),action_actionner_dist(),traiter_appels_actions()]
+CREATE  TABLE IF NOT EXISTS `c1planetalumni`.spip_signatures (
+		id_signature bigint(21) NOT NULL auto_increment,
+		id_petition bigint(21) DEFAULT '0' NOT NULL,
+		date_time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+		prenom_email text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		nom_email text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		annee_naissance text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		ecole_alumni text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		membre_asso_alumni varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci  DEFAULT '' NOT NULL,
+		organisation text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		fonction_organisation text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		pays_organisation text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		ville_organisation text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		ad_email text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		nom_site text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		url_site text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		message mediumtext  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		statut varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci  DEFAULT '0' NOT NULL,
+		maj TIMESTAMP,
+		PRIMARY KEY (id_signature),
+		KEY id_petition (id_petition),
+		KEY id_ecole (id_ecole),
+		KEY statut (statut)) ENGINE=MyISAM DEFAULT  CHARACTER SET utf8 COLLATE utf8_general_ci
+2020-07-10 13:10:11 92.184.112.207 (pid 29877) :Pri:ERREUR: Erreur 1170 de mysql: BLOB/TEXT column 'id_ecole' used in key specification without a key length
+in /var/www/clients/client1/web53/web/www/ecrire/base/create.php L73 [sql_create(),creer_ou_upgrader_table(),alterer_base(),creer_base(),couteau_suisse_upgrade(),spip_plugin_install(),plugins_installer_dist(),installer_plugin(),do_install(),do_action(),one_action(),action_actionner_dist(),traiter_appels_actions()]
+CREATE  TABLE IF NOT EXISTS `c1planetalumni`.spip_ecoles_alumni (
+		id_ecole text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		nom text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		id_pays text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		statut VARCHAR(10) CHARACTER SET utf8 COLLATE utf8_general_ci  NOT NULL DEFAULT 'publie',
+		PRIMARY KEY (id_ecole)) ENGINE=MyISAM DEFAULT  CHARACTER SET utf8 COLLATE utf8_general_ci
+2020-07-31 15:19:13 176.143.250.163 (pid 22364) :Pub:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.id_gis_organisation' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signatureshtml_013382675b4397bf5b9650de1e9b27b3(),html_013382675b4397bf5b9650de1e9b27b3(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),include()]
+SELECT signatures.id_gis_organisation, signatures.ecole_alumni, signatures.autorisation_infos_publiques, signatures.date_time AS date, signatures.nom_email AS nom, signatures.prenom_email, signatures.linkedin, signatures.id_signature, 0 as points, rand() AS hasard
+FROM `c1planetalumni`.spip_signatures AS `signatures`  
+INNER JOIN `c1planetalumni`.spip_petitions AS L1 ON ( L1.id_petition = signatures.id_petition )
+WHERE (signatures.statut = 'publie')
+	AND (L1.id_article = 1)
+ORDER BY signatures.date_time DESC
+2020-07-31 15:24:45 176.143.250.163 (pid 26898) :Pub:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.autorisation_infos_publiques' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signatureshtml_013382675b4397bf5b9650de1e9b27b3(),html_013382675b4397bf5b9650de1e9b27b3(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),include()]
+SELECT signatures.id_gis_organisation, signatures.ecole_alumni, signatures.autorisation_infos_publiques, signatures.date_time AS date, signatures.nom_email AS nom, signatures.prenom_email, signatures.linkedin, signatures.id_signature, 0 as points, rand() AS hasard
+FROM `c1planetalumni`.spip_signatures AS `signatures`  
+INNER JOIN `c1planetalumni`.spip_petitions AS L1 ON ( L1.id_petition = signatures.id_petition )
+WHERE (signatures.statut = 'publie')
+	AND (L1.id_article = 1)
+ORDER BY signatures.date_time DESC
+2020-07-31 15:24:50 176.143.250.163 (pid 26161) :Pub:ERREUR: Erreur 1054 de mysql: Unknown column 'signatures.autorisation_infos_publiques' in 'field list'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signatureshtml_013382675b4397bf5b9650de1e9b27b3(),html_013382675b4397bf5b9650de1e9b27b3(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),eval(),include(),evaluer_fond(),recuperer_fond(),eval(),include(),include()]
+SELECT signatures.id_gis_organisation, signatures.ecole_alumni, signatures.autorisation_infos_publiques, signatures.date_time AS date, signatures.nom_email AS nom, signatures.prenom_email, signatures.linkedin, signatures.id_signature, 0 as points, rand() AS hasard
+FROM `c1planetalumni`.spip_signatures AS `signatures`  
+INNER JOIN `c1planetalumni`.spip_petitions AS L1 ON ( L1.id_petition = signatures.id_petition )
+WHERE (signatures.statut = 'publie')
+	AND (L1.id_article = 1)
+ORDER BY signatures.date_time DESC
+2020-08-12 12:46:08 176.143.250.163 (pid 6993) :Pub:ERREUR: Erreur 1054 de mysql: Unknown column 'ville' in 'order clause'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signatureshtml_013382675b4397bf5b9650de1e9b27b3(),html_013382675b4397bf5b9650de1e9b27b3(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),traiter_appels_inclusions_ajax(),include()]
+SELECT signatures.id_gis_organisation, signatures.date_time AS date, signatures.nom_email AS nom, signatures.prenom_email, signatures.organisation, signatures.linkedin, signatures.ecole_alumni, signatures.id_signature, 0 as points, rand() AS hasard
+FROM `c1planetalumni`.spip_signatures AS `signatures`  
+INNER JOIN `c1planetalumni`.spip_petitions AS L1 ON ( L1.id_petition = signatures.id_petition )
+WHERE (signatures.statut = 'publie')
+	AND (signatures.autorisation_infos_publiques = 'oui')
+	AND (L1.id_article = 1)
+ORDER BY ville
+2020-08-13 17:11:14 176.143.250.163 (pid 6993) :Pri:ERREUR: Erreur 1072 de mysql: Key column 'id_ecole' doesn't exist in table
+in /var/www/clients/client1/web53/web/www/ecrire/base/create.php L73 [sql_create(),creer_ou_upgrader_table(),alterer_base(),creer_base(),serie_alter(),maj_while(),maj_plugin(),jeux_upgrade(),spip_plugin_install(),plugins_installer_dist(),installer_plugin(),do_install(),do_action(),one_action(),action_actionner_dist(),traiter_appels_actions()]
+CREATE  TABLE IF NOT EXISTS `c1planetalumni`.spip_signatures (
+		id_signature bigint(21) NOT NULL auto_increment,
+		id_petition bigint(21) DEFAULT '0' NOT NULL,
+		date_time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+		prenom_email text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		nom_email text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		annee_naissance text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		ecole_alumni text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		membre_asso_alumni varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci  DEFAULT '' NOT NULL,
+		linkedin text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		organisation text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		fonction_organisation text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		id_gis_organisation int DEFAULT NULL,
+		autorisation_infos_publiques varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci  DEFAULT 'non' NOT NULL,
+		ad_email text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		nom_site text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		url_site text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		message mediumtext  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		statut varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci  DEFAULT '0' NOT NULL,
+		maj TIMESTAMP,
+		PRIMARY KEY (id_signature),
+		KEY id_petition (id_petition),
+		KEY id_ecole (id_ecole),
+		KEY statut (statut)) ENGINE=MyISAM DEFAULT  CHARACTER SET utf8 COLLATE utf8_general_ci
+2020-08-13 17:11:14 176.143.250.163 (pid 6993) :Pri:ERREUR: Erreur 1170 de mysql: BLOB/TEXT column 'id_ecole' used in key specification without a key length
+in /var/www/clients/client1/web53/web/www/ecrire/base/create.php L73 [sql_create(),creer_ou_upgrader_table(),alterer_base(),creer_base(),serie_alter(),maj_while(),maj_plugin(),jeux_upgrade(),spip_plugin_install(),plugins_installer_dist(),installer_plugin(),do_install(),do_action(),one_action(),action_actionner_dist(),traiter_appels_actions()]
+CREATE  TABLE IF NOT EXISTS `c1planetalumni`.spip_ecoles_alumni (
+		id_ecole text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		nom text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		id_pays text  CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' NOT NULL,
+		statut VARCHAR(10) CHARACTER SET utf8 COLLATE utf8_general_ci  NOT NULL DEFAULT 'publie',
+		PRIMARY KEY (id_ecole)) ENGINE=MyISAM DEFAULT  CHARACTER SET utf8 COLLATE utf8_general_ci
+2020-08-20 19:06:52 90.114.225.219 (pid 2231) :Pub:ERREUR: Erreur 1054 de mysql: Unknown column 'ville' in 'order clause'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signatureshtml_013382675b4397bf5b9650de1e9b27b3(),html_013382675b4397bf5b9650de1e9b27b3(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),traiter_appels_inclusions_ajax(),include()]
+SELECT signatures.id_gis_organisation, signatures.ecole_alumni, signatures.date_time AS date, signatures.nom_email AS nom, signatures.prenom_email, signatures.organisation, signatures.linkedin, signatures.id_signature, 0 as points, rand() AS hasard
+FROM `c1planetalumni`.spip_signatures AS `signatures`  
+INNER JOIN `c1planetalumni`.spip_petitions AS L1 ON ( L1.id_petition = signatures.id_petition )
+WHERE (signatures.statut = 'publie')
+	AND (signatures.autorisation_infos_publiques = 'oui')
+	AND (L1.id_article = 1)
+ORDER BY ville
+2020-08-20 19:06:54 86.194.55.13 (pid 12101) :Pub:ERREUR: Erreur 1054 de mysql: Unknown column 'ville' in 'order clause'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signatureshtml_013382675b4397bf5b9650de1e9b27b3(),html_013382675b4397bf5b9650de1e9b27b3(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),traiter_appels_inclusions_ajax(),include()]
+SELECT signatures.id_gis_organisation, signatures.ecole_alumni, signatures.date_time AS date, signatures.nom_email AS nom, signatures.prenom_email, signatures.organisation, signatures.linkedin, signatures.id_signature, 0 as points, rand() AS hasard
+FROM `c1planetalumni`.spip_signatures AS `signatures`  
+INNER JOIN `c1planetalumni`.spip_petitions AS L1 ON ( L1.id_petition = signatures.id_petition )
+WHERE (signatures.statut = 'publie')
+	AND (signatures.autorisation_infos_publiques = 'oui')
+	AND (L1.id_article = 1)
+ORDER BY ville
+2020-08-20 19:07:38 86.228.210.21 (pid 6994) :Pub:ERREUR: Erreur 1054 de mysql: Unknown column 'ville' in 'order clause'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signatureshtml_013382675b4397bf5b9650de1e9b27b3(),html_013382675b4397bf5b9650de1e9b27b3(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),traiter_appels_inclusions_ajax(),include()]
+SELECT signatures.id_gis_organisation, signatures.ecole_alumni, signatures.date_time AS date, signatures.nom_email AS nom, signatures.prenom_email, signatures.organisation, signatures.linkedin, signatures.id_signature, 0 as points, rand() AS hasard
+FROM `c1planetalumni`.spip_signatures AS `signatures`  
+INNER JOIN `c1planetalumni`.spip_petitions AS L1 ON ( L1.id_petition = signatures.id_petition )
+WHERE (signatures.statut = 'publie')
+	AND (signatures.autorisation_infos_publiques = 'oui')
+	AND (L1.id_article = 1)
+ORDER BY ville
+2020-08-20 19:07:47 86.194.55.13 (pid 31549) :Pub:ERREUR: Erreur 1054 de mysql: Unknown column 'ville' in 'order clause'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signatureshtml_013382675b4397bf5b9650de1e9b27b3(),html_013382675b4397bf5b9650de1e9b27b3(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),traiter_appels_inclusions_ajax(),include()]
+SELECT signatures.id_gis_organisation, signatures.ecole_alumni, signatures.date_time AS date, signatures.nom_email AS nom, signatures.prenom_email, signatures.organisation, signatures.linkedin, signatures.id_signature, 0 as points, rand() AS hasard
+FROM `c1planetalumni`.spip_signatures AS `signatures`  
+INNER JOIN `c1planetalumni`.spip_petitions AS L1 ON ( L1.id_petition = signatures.id_petition )
+WHERE (signatures.statut = 'publie')
+	AND (signatures.autorisation_infos_publiques = 'oui')
+	AND (L1.id_article = 1)
+ORDER BY ville
+2020-08-20 19:07:51 159.180.240.186 (pid 2231) :Pub:ERREUR: Erreur 1054 de mysql: Unknown column 'ville' in 'order clause'
+in /var/www/clients/client1/web53/web/www/ecrire/public/composer.php L1005 [sql_select(),calculer_select(),select(),__construct(),create(),BOUCLE_signatureshtml_013382675b4397bf5b9650de1e9b27b3(),html_013382675b4397bf5b9650de1e9b27b3(),public_parametrer_dist(),public_produire_page_dist(),inclure_page(),evaluer_fond(),recuperer_fond(),traiter_appels_inclusions_ajax(),include()]
+SELECT signatures.id_gis_organisation, signatures.ecole_alumni, signatures.date_time AS date, signatures.nom_email AS nom, signatures.prenom_email, signatures.organisation, signatures.linkedin, signatures.id_signature, 0 as points, rand() AS hasard
+FROM `c1planetalumni`.spip_signatures AS `signatures`  
+INNER JOIN `c1planetalumni`.spip_petitions AS L1 ON ( L1.id_petition = signatures.id_petition )
+WHERE (signatures.statut = 'publie')
+	AND (signatures.autorisation_infos_publiques = 'oui')
+	AND (L1.id_article = 1)
+ORDER BY ville

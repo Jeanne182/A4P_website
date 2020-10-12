@@ -1,0 +1,88 @@
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+    
+    <!-- Ici la boucle de langues -->
+    
+    <div class="container" id="top-menu">
+        
+        <span class="flex-row column-centered">
+            <div class='l-2 logo_site-container mr-4'>
+                <img class="masthead-avatar" src="[(#_mots_rubrique_accueil:LOGO_SITE|extraire_attribut{src})]" alt="" />
+            </div>
+            <a class="navbar-brand js-scroll-trigger" href="#URL_SITE_SPIP/">
+                
+                <div class='text-uppercase'>#NOM_SITE_SPIP</div>
+                <h4 id="asso-description">#SLOGAN_SITE_SPIP</h4>
+            </a>
+        </span>
+        <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="absolute r-2 navbar-nav ml-auto sf-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+                
+                <BOUCLE_rubriques(RUBRIQUES){titre_mot="rubrique_principale"}{racine}{par num titre}>
+                    <li class="nav-item mx-0 mx-lg-1">
+
+
+                        #SET{href,""}
+                        <BOUCLE_mots(MOTS){id_rubrique}>
+                            
+                            <BOUCLE_test_accueil(CONDITION){si #TITRE|=={'possede_page_accueil'}}>
+                                
+                                #SET{url,#URL_RUBRIQUE}
+                                #SET{href,"href='"#GET{url}"'"}
+                            </BOUCLE_test_accueil>
+                        </BOUCLE_mots>
+                        
+                        <a #GET{href} class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger menu-pannel bg-secondary text-uppercase">#TITRE</a> <!--sf-with-ul -->
+                        <ul style="display: none; float: none; width: 13em;">
+                            <BOUCLE_sousRubriques(RUBRIQUES){id_parent}{par num titre}>
+                                #SET{url,#URL_RUBRIQUE}
+                                #SET{separation,'none'}
+                                <BOUCLE_mots_engagement(MOTS){id_rubrique}>                            
+                                    <BOUCLE_test_resume_engagement10(CONDITION){si #TITRE|=={'rubrique_resume_engagement'}}>                                
+                                        #SET{url,#_rubriques:URL_RUBRIQUE}                                        
+                                    </BOUCLE_test_resume_engagement10>
+                                    <BOUCLE_test_formulaire(CONDITION){si #TITRE|=={'rubrique_engagement'}}>                                
+                                        #SET{url,#_rubriques:URL_RUBRIQUE#formulaire}                                        
+                                    </BOUCLE_test_formulaire>
+                                    <BOUCLE_test_forum(CONDITION){si #TITRE|=={'rubrique_initiatives'}}>  
+                                        <BOUCLE_forum(ARTICLES){id_rubrique}>
+                                            #SET{url,#URL_ARTICLE}  
+                                        </BOUCLE_forum>                             
+                                                                              
+                                    </BOUCLE_test_forum>
+                                    <BOUCLE_test_underline(CONDITION){si #TITRE|=={'separation'}}>  
+                                        #SET{separation,''}           
+                                    </BOUCLE_test_underline>
+                                </BOUCLE_mots_engagement>
+                                
+                                <li style="white-space: normal; float: none; width: 100%;">                        
+                                        <a href="#GET{url}" class="menu-item #EDIT{titre} #GET{underline}" style="float: none; width: auto;">#TITRE</a>
+                                </li>
+                                <div class="separation-bar-menu-pannel-white #GET{separation}"></div>
+                            </BOUCLE_sousRubriques>
+                            <!-- <div class="separation-bar-menu-pannel"></div> -->                          
+                        </ul>
+                    </li>
+                </BOUCLE_rubriques>
+                <BOUCLE_formulaire(RUBRIQUES){titre_mot="rubrique_je_m_engage"}>
+                <li class="nav-item mx-0 mx-lg-1">
+                    <a href="#URL_RUBRIQUE#formulaire" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger menu-pannel bg-primary no-a-hover text-white text-uppercase">Signer l'engagement</a>
+                </li>
+                </BOUCLE_formulaire>
+            </ul>
+        </div>
+    </div>
+    
+</nav>
+<h5 id="red-banner" class="absolute p-4 primary-font flex-row row-centered text-white align-middle text-center" style="background-color:red; width:100%; z-index:100;">
+    Site en construction, ouverture des inscriptions dans quelques semaines
+</h5>
+<script>
+	var navHeight = $('#mainNav').outerHeight();
+    $('#red-banner').css('margin-top', navHeight);
+	console.log('navHeight : ', navHeight);
+</script>

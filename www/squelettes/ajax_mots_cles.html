@@ -1,0 +1,39 @@
+#CACHE{0}
+#HTTP_HEADER{Content-Type: text/html; charset=#CHARSET}
+
+<script>
+    $('.btn').unbind("click").click(function(){
+        var id= "." + $(this).attr('id');      
+         $(id).toggleClass('none');
+    });
+</script>
+
+<BOUCLE_rubriques(RUBRIQUES){titre_mot='rubrique_pour_aller_plus_loin'}>   
+    
+    <BOUCLE_sites(RUBRIQUES) {titre_mot}{id_parent}> 
+        <BOUCLE_langues(MOTS){id_rubrique}{titre IN 'fr', 'en'}>
+            <BOUCLE_test_langue(CONDITION){si #TITRE|=={#ENV{lang}}}>
+                <INCLURE{fond=inclure/referencement_site_modele_1,id_rubrique} />
+            </BOUCLE_test_langue>        
+        </BOUCLE_langues>
+            <INCLURE{fond=inclure/referencement_site_modele_1,id_rubrique} />
+        <//B_langues>
+
+    </BOUCLE_sites>
+        
+        <BOUCLE_tous_les_sites(RUBRIQUES){id_parent}>
+
+            <BOUCLE_langues2(MOTS){id_rubrique}{titre IN 'fr', 'en'}>
+                <BOUCLE_test_langue2(CONDITION){si #TITRE|=={#ENV{lang}}}>
+                    <INCLURE{fond=inclure/referencement_site_modele_1,id_rubrique} />
+                </BOUCLE_test_langue2>        
+            </BOUCLE_langues2>
+                <INCLURE{fond=inclure/referencement_site_modele_1,id_rubrique} />
+            <//B_langues2>
+                
+        </BOUCLE_tous_les_sites> 
+        
+    <//B_sites>
+
+</BOUCLE_rubriques>
+

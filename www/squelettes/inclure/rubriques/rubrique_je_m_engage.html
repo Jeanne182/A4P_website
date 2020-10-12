@@ -1,0 +1,68 @@
+<BOUCLE_principale(RUBRIQUES) {id_parent=#ID_RUBRIQUE}{par num titre}>
+
+	<BOUCLE_test_rang10(CONDITION){si #RANG|=={10}}>
+		<fieldset class="info section-padding-top">
+			<h2 class="page-section-heading text-center text-dark-blue text-uppercase mb-0">#TITRE</h2>
+			<div class="divider-custom">
+				<div class="divider-custom-line"></div>
+			</div>
+			
+			<span class="flex-column text-justify responsive mt-5">
+				<span id="paragraph" class="responsive primary-font text-justify text-black">#TEXTE</span>
+			</span>
+			
+		</fieldset>
+	</BOUCLE_test_rang10>
+
+<BOUCLE_test_rang20(CONDITION){si #RANG|=={20}}>
+
+
+	<section class="section-padding responsive mt-5 flex-column column-centered">
+		<BOUCLE_redirection(RUBRIQUES)>
+			<BOUCLE_mots(MOTS){id_rubrique}{titre_mot='rubrique_manifeste'}>
+				<a href="#URL_RUBRIQUE" class="submit btn btn-xxl text-black-50">
+					<multi>[fr]Lire l'Appel[en]Read the manifesto</multi>
+				</a>
+			</BOUCLE_mots>
+		</BOUCLE_redirection>
+		
+	</section>
+	<div class="engagement-list-container section-padding">
+		<span id="formulaire" class="absolute mt-n8 w-100"></span>
+		<!-- <h5 class="portfolio-item mx-auto text-white text-center pt-3 pr-1 pl-1 pb-1 mb-sm-0 b-r-t-15 bg-blue-green primary-font no-gutters">[(#DESCRIPTIF|extraire_balise{p})]</h5>
+		<span class="flex-column">
+			<h4 id="paragraph" class="primary-font responsive p-5 b-r-b-15 bg-grey text-justify text-black">
+				#TEXTE
+				
+			</h4>
+			
+		</span> -->
+		<BOUCLE_engagements(RUBRIQUES){id_parent}>
+			<h5 class="portfolio-item mx-auto mt-5 text-white text-center p-3 b-r-t-15 mb-sm-0 bg-blue-green p-1 primary-font no-gutters #EDIT{titre}">#TITRE</h5>
+			<div class="bg-grey b-r-b-15 pt-5 pb-5">
+				<BOUCLE_numEngagement(ARTICLES){id_rubrique}>
+				<h4 id="paragraph" class="text-black flex-row responsive column-centered engagement-list-item text-justify [(#COMPTEUR_BOUCLE|alterner{'ml-vw-6 mr-vw-10','ml-vw-10 mr-vw-6'})]">
+					<div class='list-number text-yellow'>
+						#RANG.
+					</div>
+					<div class='engagements-list primary-font #EDIT{titre}'>#TITRE</div>
+				</h4>
+			</BOUCLE_numEngagement>
+		</div>
+			
+		</BOUCLE_engagements>
+	</div>
+	<INCLURE{fond=inclure/petition,id_article=1,env,ajax} />
+
+	<section class="section-padding-bottom flex-column column-centered">
+		
+				<BOUCLE_rubrique_alumni_proches(RUBRIQUES){titre_mot='rubrique_alumni_proches'}>
+					<a href="#URL_RUBRIQUE" class="submit btn btn-xxl text-black-50 f-1 p-4 mt-0 mb-sm-0">
+						<multi>[fr]Je découvre les actions des alumni, et je témoigne des miennes</multi>
+					</a>
+				</BOUCLE_rubrique_alumni_proches>
+			
+	</section>
+
+</BOUCLE_test_rang20>
+</BOUCLE_principale>

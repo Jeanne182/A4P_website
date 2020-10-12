@@ -1,0 +1,197 @@
+<BOUCLE_principale(RUBRIQUES) {id_rubrique}>
+    
+    <section class="row quizz responsive mr-0 ml-0 space-evenly">
+        
+            <BOUCLE_quizz(ARTICLES){id_rubrique}{par num titre}>
+                <!-- span data-toggle="modal" data-target="#portfolioModal[(#ID_ARTICLE)]" -->
+                <a data-toggle="modal" data-target="#portfolioModal[(#ID_ARTICLE)]" class="[(#COMPTEUR_BOUCLE|alterner{bg-secondary, bg-primary})] no-a-hover presentation-rubrique w-50">
+                    <div class="portfolio-item mx-auto flex-column column-centered space-between" > <!-- data-toggle="modal" data-target="#portfolioModal[(#ID_RUBRIQUE)]" -->
+                            <h5 class="text-white title-font text-uppercase flex-column mt-5 mb-5 text-center column-centered #EDIT{titre}">#TITRE</h5>
+                        
+                    </div>
+                </a>
+                <div class="portfolio-modal modal fade" id="portfolioModal[(#ID_ARTICLE)]" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label"  aria-hidden="true">
+                    <div class="modal-dialog modal-xl" role="document">
+                        <div class="modal-content">
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                            </button>
+                            
+                            <div class="modal-body ml-5 mr-5 flex-column column-centered text-center">
+                                    
+                                <div class="container">
+                                    
+            
+                                    <div class="row justify-content-center flex-column column-centered">
+                                        <h1 class="text-uppercase text-pink jeux_titre qcm_titre" id="portfolioModal1Label">#TITRE</h1>
+                                        <hr class="mb-5">
+                                        <div class="ajax w-100">
+                                            <!-- Portfolio Modal - Title-->
+                                            
+                                                <section id="quizz" class="flex-column column-centered">
+                                                    #TEXTE
+                                                </section>
+                                                                                            <!-- Portfolio Modal - Text-->
+                                            
+                                        </div>
+                                        <div class="pointer mt-3 pink-button" data-dismiss="modal">
+                                            <multi>[fr]Quitter[en]Exit</multi>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </BOUCLE_quizz>
+        
+    </section>
+    <section class="figures-section page-padding bg-grey mb-6" id="figures">
+        
+        <div class="flex-row row-centered" style="width: 100%;">
+            <span class="flex-column">
+                <span class="primary-font f-1 text-justify text-black #EDIT{texte}">#TEXTE</span>
+            </span>
+        </div>            
+    </section>    
+    <!-- class="portfolio-modal modal fade"  -->
+
+    
+
+    <BOUCLE_rubriques(RUBRIQUES){id_parent=#ID_RUBRIQUE}{par num titre}>
+        
+        <section class="section-padding" id="figures">
+            <h2 class="page-section-heading text-center text-dark-blue text-uppercase mb-0">#TITRE</h2>
+            <div class="divider-custom mb-6">
+                <div class="divider-custom-line"></div>
+            </div>
+
+            <BOUCLE_test_quelques_pistes(CONDITION){si #RANG|=={20}}>
+
+                <section class="mt-5 flex-column column-centered">
+                    <div class="row space-evenly">                                        
+                        
+                                                               
+                        <BOUCLE_sites_articles(SITES) {id_rubrique} {par nom_site}{syndication=non}>
+                            #SET{couleur, "bg-primary "}
+                            <BOUCLE_mots(MOTS){id_syndic}>
+                                
+                                <BOUCLE_test(CONDITION){si #TITRE|=={'Climat'}}>
+                                    #SET{couleur,"bg-secondary "}
+                                </BOUCLE_test>
+                                
+                            </BOUCLE_mots>  
+                            <a href="#URL_SITE" class="button-scale no-a-hover col-md-6 mb-5" target="_blank">
+                                <div class="b-r-15 h-100 #GET{couleur} w-100 mx-auto space-between flex-column" >
+                                        <span class="p-3 flex-row row-centered">
+                                                [(#LOGO_SITE|oui)
+                                                <div class='picture image-paragraph mr-3 rounded-circle-7' style="background-image: url('[IMG/(#LOGO_SITE|fichier)]');">
+                                                    <div class='text-center text-white rounded-circle-7'></div>
+                                                </div>
+                                            ]
+                                            <span class="flex-column row-centered">
+                                                <h5 class="text-white primary-font">#NOM_SITE</h5>
+                                                <div class="primary-font text-white">#DESCRIPTIF</div>
+                                            </span>
+                                        </span>                                     
+                                            <span class="w-100 bg-grey b-r-b-15 flex-column column-centered" target="_blank">
+                                            <div class='a-hover mb-3 pointer'><strong class='primary-font'><multi>[fr]En savoir +[en]Learn more</multi></strong></div>
+                                        </span>    
+                                </div>
+                                
+                            </a>
+                                       
+                        </BOUCLE_sites_articles>
+                              
+                    </div>
+                    <!-- <a href="#URL_RUBRIQUE" class="mb-5 submit btn btn-xxl text-black-50">
+                        <multi>[fr]Voir plus de sites[en]See more websites</multi>
+                    </a> -->
+                    <INCLURE{fond=inclure/rubriques/rubrique_sites_pistes,id_rubrique} />
+                </section>
+
+            </BOUCLE_test_quelques_pistes>
+
+                <span class="flex-column column-centered">
+                    <div class="row space-evenly">
+                        
+                        <BOUCLE_articles(ARTICLES){id_rubrique}{par num titre}>
+                            #SET{total_boucle, #TOTAL_BOUCLE} 
+                            #SET{couleur, "bg-secondary "}
+                            <BOUCLE_mots_color(MOTS){id_article}>
+                                
+                                <BOUCLE_test_color(CONDITION){si #TITRE|=={'Environnement'}}>
+                                    #SET{couleur,"bg-primary "}
+                                </BOUCLE_test_color>
+                            </BOUCLE_mots_color>
+                            <div class="col-md-6 col-lg-4 mb-5">
+                                <div class="portfolio-item mx-auto h-100 flex-column column-centered space-between" > <!-- data-toggle="modal" data-target="#portfolioModal[(#ID_RUBRIQUE)]" -->
+                                    <span class="w-100 #GET{couleur} h-100 p-4 b-r-15 flex-column column-centered">
+                                        <h5 class="text-white title-font f-2 flex-column text-center column-centered #EDIT{titre}">#TITRE</h5>
+                                        <div class="primary-font text-center text-white #EDIT{texte}">#TEXTE</div>
+                                    </span>
+                                    
+                                </div>
+                            </div>            
+                        </BOUCLE_articles>
+                    </div>
+                    <!-- <BOUCLE_total(ARTICLES){id_rubrique}>
+                            #SET{total_boucle, #TOTAL_BOUCLE}
+                    </BOUCLE_total>
+                    <div id="more-figures" class="none row space-evenly">
+                        <BOUCLE_articles_plus(ARTICLES){id_rubrique}{par num titre}{6,#GET{total_boucle}}>  
+                            #SET{couleur, "bg-secondary "}
+                            <BOUCLE_mots_color2(MOTS){id_article}>
+                                
+                                <BOUCLE_test_color2(CONDITION){si #TITRE|=={'Environnement'}}>
+                                    #SET{couleur,"bg-primary "}
+                                </BOUCLE_test_color2>
+                            </BOUCLE_mots_color2>
+                            <div class="col-md-6 col-lg-4 mb-5">
+                                <div class="portfolio-item mx-auto h-100 flex-column column-centered space-between" > 
+                                    <span class="w-100 #GET{couleur} h-100 p-4 b-r-15 flex-column column-centered">
+                                        <h5 class="text-white title-font f-2 flex-column text-center column-centered #EDIT{titre}">#TITRE</h5>
+                                        <div class="primary-font text-center text-white #EDIT{texte}">#TEXTE</div>
+                                    </span>
+                                    
+                                </div>
+                            </div>            
+                        </BOUCLE_articles_plus>
+                        <span class="flex-column w-100 mb-5">
+                            <BOUCLE_sites_chiffres(SITES){id_rubrique}>
+                                <li><a class="link" href="#URL_SITE" target="_blank">#NOM_SITE</a></li>
+                            </BOUCLE_sites_chiffres>
+                        </span>
+                        
+                    </div>
+                        
+                    
+                    <h6 id="button-more-figures" class="btn bg-yellow btn-m mb-5 text-white primary-font"><multi>[fr]En voir +[en]See more figures</multi></h6> -->
+                </span>
+            <script>
+
+                $('#button-more-figures').click(function(){
+                    console.log('test');
+                    $('#more-figures').toggleClass('none');
+                    if($('#more-figures').hasClass('none')){
+                        $('#button-more-figures').html('<multi>[fr]En voir +[en]See more figures</multi>');
+                    }
+                    else{
+                        $('#button-more-figures').html('<multi>[fr]En voir -[en]See less figures</multi>');
+                    }
+                });
+            </script>
+
+            <//B_test_quelques_pistes>    
+            
+            
+        </section>     
+    </BOUCLE_rubriques>
+
+      
+
+    
+
+    
+
+</BOUCLE_principale>

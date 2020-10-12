@@ -1,0 +1,49 @@
+<BOUCLE_principale(RUBRIQUES) {id_rubrique}>
+    <h1 class="text-center mt-6 text-dark-blue text-uppercase"><i>En construction</i></h1>
+    <BOUCLE_sous_rubriques(RUBRIQUES){id_parent=#ID_RUBRIQUE}{par num titre}>
+        <section class="section-padding-top">
+            <h2 class="text-center text-dark-blue text-uppercase #EDIT{titre}">#TITRE</h2>
+			<div class="divider-custom">
+				<div class="divider-custom-line"></div>
+			</div>  
+            [<div class="text-justify bg-secondary text-white p-4 b-r-15 #EDIT{texte} mb-3">(#TEXTE)</div>]
+                <ul>
+                    <BOUCLE_sites_articles(SITES) {id_rubrique}{syndication=non}{par nom_site}>
+                        <div class="flex-row mt-4 hover-site column-centered">
+                            <div class='picture image-paragraph ml-4 rounded-circle-7' style="background-image: url('[IMG/(#LOGO_SITE|fichier)]');">
+                                <div class='text-center text-white rounded-circle-7'></div>
+                            </div>
+                            <span class="flex-column row-centered">
+                                <a href="#URL_SITE" class='h6 primary-font link hover-yellow #EDIT{nom_site}' target="_blank">#NOM_SITE</a>
+                                [<div class='l-h-12 #EDIT{descriptif}'>(#DESCRIPTIF)</div>]
+                            </span>
+                        </div>
+                    </BOUCLE_sites_articles> 
+                    <BOUCLE_articles(ARTICLES) {id_rubrique}{par num titre}>
+                        <div class="flex-row mt-4 p-3 b-r-15 hover-site" target="_blank">
+                            <div class='picture image-paragraph b-r-l-15 mr-0 rectangle-8' style="background-image: url('[IMG/(#LOGO_ARTICLE|fichier)]');">
+                                <div class='text-center text-white rectangle-10'></div>
+                            </div>
+                            <span class="flex-column p-3 b-r-r-15 bg-grey row-centered">
+                                <h6 class='primary-font text-dark-blue #EDIT{nom_site}'>#TITRE</h6>
+                                [<div class='l-h-12 hover-yellow #EDIT{descriptif}'>(#TEXTE)</div>]
+                            </span>
+                        </div>
+                    </BOUCLE_articles>  
+                </ul>       
+                 
+        </section>
+    </BOUCLE_sous_rubriques>
+ 
+
+<section class="page-padding">
+    <h5 class="primary-font text-dark-blue">Dans la même rubrique...</h5>
+    <ul>
+        <BOUCLE_sousRubrique(RUBRIQUES){meme_parent}{!id_rubrique}{par num titre}>
+            <BOUCLE_rubriques_invisibles(MOTS){id_rubrique}{titre='invisible'}> </BOUCLE_rubriques_invisibles>
+            <li><a class="link" href="#URL_RUBRIQUE">#TITRE</a></li>
+            <//B_rubriques_invisibles>
+        </BOUCLE_sousRubrique>
+    </ul>
+</section>
+</BOUCLE_principale>

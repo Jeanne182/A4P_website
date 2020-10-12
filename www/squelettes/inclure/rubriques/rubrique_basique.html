@@ -1,0 +1,148 @@
+<BOUCLE_principale(RUBRIQUES) {id_rubrique}>
+    
+    <BOUCLE_sous_rubriques(RUBRIQUES){id_parent=#ID_RUBRIQUE}{par num titre}>
+        
+
+        <section class="section-padding mt-5">
+            <h2 class="text-center text-dark-blue text-uppercase #EDIT{titre}">#TITRE</h2>
+			<div class="divider-custom">
+				<div class="divider-custom-line"></div>
+            </div>  
+            
+            <BOUCLE_pop_down(MOTS){id_rubrique}{titre_mot='pop_down'}>
+                <BOUCLE_sousRubriques(RUBRIQUES){id_parent}>
+                    <span class="flex-column mb-6">
+                        <span class="toggle-#ID_RUBRIQUE-header flex-column bg-primary p-3 b-r-15 column-centered">
+                            <h4 class='primary-font text-white hover-yellow #EDIT{nom_site}'>#TITRE</h4>
+                            [<div class='l-h-12 hover-yellow text-justify #EDIT{descriptif}'>(#DESCRIPTIF)</div>]
+                            <a>
+                                <h6 id="toggle-#ID_RUBRIQUE" class="btn bg-secondary btn-m text-white primary-font"><multi>[fr]En savoir +[en]Learn more</multi></h6>
+                            </a>
+                        </span>
+                        <div class="toggle-#ID_RUBRIQUE bg-grey b-r-b-15 p-3 pr-5 text-justify none">
+                            #TEXTE
+                            <ul>
+                                <BOUCLE_sites(SITES){id_rubrique}>
+                                    <div class="flex-row responsive mt-4 hover-site column-centered" target="_blank">
+
+                                        <div class='picture image-paragraph mr-3 ml-3 rounded-circle-7' style="background-image: url('[IMG/(#LOGO_SITE|fichier)]');">
+                                            <div class='text-center text-white rounded-circle-7'></div>
+                                        </div>
+                                        <li class="ml-0 mt-0 flex-column row-centered">
+                                            <a href="#URL_SITE" class='h6 mb-sm-0 primary-font link text-dark-blue hover-yellow #EDIT{nom_site}' target='_blank'>#NOM_SITE</a>
+                                            [<div class='l-h-12 text-justify hover-yellow #EDIT{descriptif}'>(#DESCRIPTIF)</div>]        
+                                            
+                                        </li>
+                                    </div>
+                                </BOUCLE_sites>
+                                <BOUCLE_rubrique_site(RUBRIQUES){id_parent}>
+                                    <strong class="pl-5 pt-4 mt-3 text-blue mt-6 text-uppercase">#TITRE :</strong>
+                                    <div class="ml-5 mt-3">
+                                        <BOUCLE_sous_sites(SITES){id_rubrique}>
+                                        <div class="flex-row responsive hover-site column-centered" target="_blank">
+
+                                            <div class='picture image-paragraph text-justify mr-3 ml-3 rounded-circle-5' style="background-image: url('[IMG/(#LOGO_SITE|fichier)]');">
+                                                <div class='text-center text-white rounded-circle-5'></div>
+                                            </div>
+                                            <li class="ml-0 mt-0 flex-column row-centered">
+                                                <a href="#URL_SITE" class='h6 mb-sm-0 primary-font link text-dark-blue hover-yellow #EDIT{nom_site}' target='_blank'>#NOM_SITE</a>
+                                                [<div class='l-h-12 hover-yellow text-justify #EDIT{descriptif}'>(#DESCRIPTIF)</div>]        
+                                                
+                                            </li>
+                                        </div>
+                                    </BOUCLE_sous_sites>
+                                    </div>
+                                    
+                                </BOUCLE_rubrique_site>
+                                
+                            </ul>
+                        </div>
+                    </span>
+                </BOUCLE_sousRubriques>
+            </BOUCLE_pop_down>
+                <BOUCLE_difficulte_article(RUBRIQUES){id_parent=#ID_RUBRIQUE}{par num titre}>     
+                        <span class="mb-5">
+                            [(#TEXTE|oui) 
+                                <h5 class="mt-5 b-r-t-15 mb-sm-0 bg-primary text-white text-center primary-font p-1 no-gutter #EDIT{titre}">#TITRE</h5>
+                                <div class="b-r-b-15 text-justify primary-font text-blue bg-grey pt-3 pr-3 pl-3 pb-1 b-r-15 no-gutter mb-5 #EDIT{texte}">#TEXTE</div>
+                            ]           
+                            [(#TEXTE|non) 
+                                <h5 class="b-r-25 mt-5 bg-primary text-white text-center primary-font p-1 no-gutter #EDIT{titre}">#TITRE</h5>
+                            ]  
+                        </span>
+                    <ul>
+                        <BOUCLE_sites_articles(SITES) {id_rubrique}{syndication=non}{par nom_site}>
+                            <div class="flex-row responsive mt-4 hover-site column-centered">
+                                <div class='picture image-paragraph ml-4 rounded-circle-7' style="background-image: url('[IMG/(#LOGO_SITE|fichier)]');">
+                                    <div class='text-center text-white rounded-circle-7'></div>
+                                </div>
+                                <span class="flex-column row-centered">
+                                    <a href="#URL_SITE" class='h6 primary-font link hover-yellow #EDIT{nom_site}' target="_blank">#NOM_SITE</a>
+                                    [<div class='l-h-12 text-justify #EDIT{descriptif}'>(#DESCRIPTIF)</div>]
+                                </span>
+                            </div>
+                        </BOUCLE_sites_articles> 
+                        <BOUCLE_articles(ARTICLES) {id_rubrique}{par num titre}>
+                            <div class="flex-row responsive mt-4 hover-site column-centered" target="_blank">
+                                <div class='picture image-paragraph ml-4 rounded-circle-7' style="background-image: url('[IMG/(#LOGO_ARTICLE|fichier)]');">
+                                    <div class='text-center text-white rounded-circle-7'></div>
+                                </div>
+                                <span class="flex-column row-centered">
+                                    <h6 class='primary-font text-dark-blue #EDIT{nom_site}'>#TITRE</h6>
+                                    [<div class='l-h-12 hover-yellow text-justify #EDIT{descriptif}'>(#TEXTE)</div>]
+                                </span>
+                            </div>
+                        </BOUCLE_articles>
+                        <BOUCLE_sousRubrique2(RUBRIQUES){id_parent}{par num titre}>
+                            <h6 class="text-uppercase mt-4 text-blue #EDIT{titre}">#TITRE</h6>
+                            <BOUCLE_sites_articles2(SITES) {id_rubrique}{syndication=non}{par nom_site}>
+                                <div class="flex-row responsive mt-4 hover-site column-centered">
+                                    <div class='picture image-paragraph ml-4 rounded-circle-7' style="background-image: url('[IMG/(#LOGO_SITE|fichier)]');">
+                                        <div class='text-center text-white rounded-circle-7'></div>
+                                    </div>
+                                    <span class="flex-column row-centered">
+                                        <a href="#URL_SITE" class='h6 primary-font link hover-yellow #EDIT{nom_site}' target="_blank">#NOM_SITE</a>
+                                        [<div class='l-h-12 text-justify #EDIT{descriptif}'>(#DESCRIPTIF)</div>]
+                                    </span>
+                                </div>
+                            </BOUCLE_sites_articles2>
+                            <BOUCLE_articles2(ARTICLES) {id_rubrique}{par num titre}>
+                            <div class="flex-row responsive mt-4 hover-site column-centered" target="_blank">
+                                <div class='picture image-paragraph ml-4 rounded-circle-7' style="background-image: url('[IMG/(#LOGO_ARTICLE|fichier)]');">
+                                    <div class='text-center text-white rounded-circle-7'></div>
+                                </div>
+                                <span class="flex-column row-centered">
+                                    <h6 class='primary-font text-dark-blue #EDIT{nom_site}'>#TITRE</h6>
+                                    [<div class='l-h-12 hover-yellow text-justify #EDIT{descriptif}'>(#TEXTE)</div>]
+                                </span>
+                            </div>
+                        </BOUCLE_articles2>
+                        </BOUCLE_sousRubrique2> 
+                    </ul>       
+                </BOUCLE_difficulte_article>          
+            <//B_pop_down> 
+        </section>
+    </BOUCLE_sous_rubriques>
+    
+
+<section class="page-padding">
+    <h5 class="primary-font text-dark-blue">Dans la même rubrique...</h5>
+    <ul>
+        <BOUCLE_sousRubrique(RUBRIQUES){meme_parent}{!id_rubrique}{par num titre}>
+            <BOUCLE_rubriques_invisibles(MOTS){id_rubrique}{titre='invisible'}> </BOUCLE_rubriques_invisibles>
+            <li><a class="link" href="#URL_RUBRIQUE">#TITRE</a></li>
+            <//B_rubriques_invisibles>
+        </BOUCLE_sousRubrique>
+    </ul>
+</section>
+</BOUCLE_principale>
+
+<script>
+    console.log('on');
+    $('.btn').unbind("click").click(function(){
+        var id= "." + $(this).attr('id');      
+         $(id).toggleClass('none');
+         console.log('click more');
+         $(id+'-header').toggleClass('b-r-t-15');
+    });
+</script>
